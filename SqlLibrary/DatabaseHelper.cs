@@ -24,18 +24,18 @@ namespace SqlLibrary
 
             Console.WriteLine("sqlStr:"+sqlStr);
 
-            try
-            {
+            //try
+            //{
                 SqlConnection sqlConnection = CreateDatabaseHandler(); //创建数据库连接(字符串中是我个人的数据库信息)
                 sqlConnection.Open();      //打开数据库连接
                 SqlCommand sqlCommand = new SqlCommand(sqlStr, sqlConnection);  //执行SQL命令
                 succNum = sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //}
 
             Console.WriteLine("succNum:"+succNum);
 

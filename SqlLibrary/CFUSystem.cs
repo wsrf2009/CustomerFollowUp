@@ -64,5 +64,14 @@ namespace SqlLibrary
                 return false;
             }
         }
+
+        public static DataSet QueryCustomerInfoBySellerName(string userName)
+        {
+            SqlDataAdapter sqlDataAdapter = TableCustomerManage.QueryCustomerInfoBySeller(userName);
+            DataSet dataSet = new DataSet();
+            int n = sqlDataAdapter.Fill(dataSet, "TB_CustomerInfo");
+            Console.WriteLine("n:"+n);
+            return dataSet;
+        }
     }
 }

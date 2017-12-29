@@ -43,6 +43,7 @@
     <Compile Include="CFUSystem.cs" />
     <Compile Include="DatabaseHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableCustomerManage.cs" />
     <Compile Include="TableUsersManage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
                     string lanIp = SystemInfo.GetLanIp();
                     //string wanIp = SystemInfo.GetWanIp();
                     //string wanIp = "";
-                    string datetime = DateTime.Now.ToString();
+                    string datetime = DateTime.Now.ToLocalTime().ToString();
                     string hostName = SystemInfo.GetHostName();
                     string sysUserName = SystemInfo.GetUserName();
 

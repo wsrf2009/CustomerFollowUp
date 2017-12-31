@@ -24,5 +24,54 @@ namespace SqlLibrary
 
             return sqlDataAdapter;
         }
+
+        public static int AddCustomer(string archivingDate, 
+            string contacts, string email, 
+            string company, string website,
+            string country, string address,
+            string scope, string type, string demand,
+            string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
+            string comefrom, string belongsto,
+            string remarks,
+            string modify)
+        {
+            string sqlCmd = "insert into TB_CustomerInfo (" +
+                "ArchivingTime, " +
+                "Contacts, Email, " +
+                "CompanyName, Website, " +
+                "Country, Address, " +
+                "BusinessScope, Type, Demand, " +
+                "Telephone, FAX, Mobile, MSN, Skype, Linkin, Whatsapp, Twiter, Facebook, " +
+                "ComeFrom, BelongsTo, " +
+                "Remarks, " +
+                "Modify) values ('" +
+                archivingDate + "','" + 
+                contacts + "','" + email + "','" + 
+                company + "','" + website + "','" + 
+                country + "','" + address + "','" +
+                scope + "','" + type + "','" + demand + "','" +
+                telephone + "','" + fax + "','" + mobile + "','" + msn + "','" + skype + "','" + linkin + "','" + whatsapp + "','" + twiter + "','" + facebook + "','" +
+                comefrom + "','" + belongsto + "','" + 
+                remarks + "','" + 
+                modify + "')";
+            return DatabaseHelper.ExecuteCommand(sqlCmd);
+        }
+
+        public static int AddFollowUpLog(string email, string company,
+            int number, string dateTime, string state,
+            string briefing, string content,
+            string modify)
+        {
+            string sqlCmd = "insert into TB_CustomerFollowUpLogs (" +
+                "Email, CompanyName, " +
+                "Number, Time, State, " +
+                "Briefing, Content, " +
+                "Modify) Values ('" +
+                email + "','" + company + "','" +
+                number + "','" + dateTime + "','" + state + "','" +
+                briefing + "','" + content + "','" +
+                modify + "')";
+            return DatabaseHelper.ExecuteCommand(sqlCmd);
+        }
     }
 }

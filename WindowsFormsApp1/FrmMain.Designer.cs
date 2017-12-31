@@ -113,7 +113,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.BtnAddCustomerInfo);
             this.splitContainer1.Size = new System.Drawing.Size(1205, 394);
-            this.splitContainer1.SplitterDistance = 311;
+            this.splitContainer1.SplitterDistance = 259;
             this.splitContainer1.TabIndex = 0;
             // 
             // DataGridViewCustomerInfo
@@ -124,7 +124,7 @@
             this.DataGridViewCustomerInfo.Location = new System.Drawing.Point(0, 0);
             this.DataGridViewCustomerInfo.Name = "DataGridViewCustomerInfo";
             this.DataGridViewCustomerInfo.RowTemplate.Height = 30;
-            this.DataGridViewCustomerInfo.Size = new System.Drawing.Size(1205, 311);
+            this.DataGridViewCustomerInfo.Size = new System.Drawing.Size(1205, 259);
             this.DataGridViewCustomerInfo.TabIndex = 0;
             // 
             // statusStrip1

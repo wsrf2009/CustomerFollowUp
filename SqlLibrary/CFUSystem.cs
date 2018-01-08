@@ -74,49 +74,52 @@ namespace SqlLibrary
             return dataSet;
         }
 
-        public static bool AddCustomer(string archivingDate,
-            string contacts, string email,
-            string company, string website,
-            string country, string address,
-            string scope, string type, string demand,
-            string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
-            string comefrom, string belongsto,
-            string remarks,
-            string modify)
-        {
-            int suc = TableCustomerManage.AddCustomer(archivingDate, 
-                contacts, email,
-                company, website,
-                country, address, 
-                scope, type, demand,
-                telephone, fax, mobile, msn, skype, linkin, whatsapp, twiter, facebook,
-                comefrom, belongsto, 
-                remarks, modify);
-            if (suc > 0)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
-        }
+        //public static int AddCustomerReturnIdentity(string archivingDate, string sort,
+        //    string contacts, string email,
+        //    string company, string website,
+        //    string country, string address,
+        //    string scope, string type, string demand,
+        //    string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
+        //    string comefrom, string belongsto,
+        //    string remarks,
+        //    string modify)
+        //{
+        //    int id = TableCustomerManage.AddCustomerReturnIdentity(archivingDate, sort,
+        //        contacts, email,
+        //        company, website,
+        //        country, address, 
+        //        scope, type, demand,
+        //        telephone, fax, mobile, msn, skype, linkin, whatsapp, twiter, facebook,
+        //        comefrom, belongsto, 
+        //        remarks, modify);
+        //    return id;
+        //}
 
-        public static bool AddFollowUpLog(string email, string company,
-            int number, string dateTime, string state,
-            string briefing, string content,
-            string modify)
-        {
-            int suc = TableCustomerManage.AddFollowUpLog(email, company,
-                number, dateTime, state,
-                briefing, content,
-                modify);
-            if (suc > 0)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
-        }
+        //public static bool AddFollowUpLog(string email, string company, int customerId,
+        //    int number, string dateTime, string state,
+        //    string briefing, string content,
+        //    string modify, string seller)
+        //{
+        //    int suc = TableCustomerManage.AddFollowUpLog(email, company, customerId,
+        //        number, dateTime, state,
+        //        briefing, content,
+        //        modify, seller);
+        //    if (suc > 0)
+        //    {
+        //        return true;
+        //    } else
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        //public static DataSet QueryCustomerFollowUpLogsByEmail(string email)
+        //{
+        //    SqlDataAdapter sqlDataAdapter = TableCustomerManage.QueryFollowUpLogsByEmail(email);
+        //    DataSet dataSet = new DataSet();
+        //    int n = sqlDataAdapter.Fill(dataSet, "TB_CustomerFollowUpLogs");
+        //    Console.WriteLine("n:" + n);
+        //    return dataSet;
+        //}
     }
 }

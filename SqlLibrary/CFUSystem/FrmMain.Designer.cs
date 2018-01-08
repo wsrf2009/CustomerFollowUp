@@ -28,29 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.DataGridViewCustomerInfo = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.LblUserName = new System.Windows.Forms.Label();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.DataGridViewCustomerInfo = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.BtnAddCustomerInfo = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomerInfo)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.DataGridViewCustomerInfo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.splitContainer1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -60,8 +56,31 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1211, 460);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1245, 629);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // DataGridViewCustomerInfo
+            // 
+            this.DataGridViewCustomerInfo.AllowUserToAddRows = false;
+            this.DataGridViewCustomerInfo.AllowUserToOrderColumns = true;
+            this.DataGridViewCustomerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridViewCustomerInfo.ContextMenuStrip = this.contextMenuStrip1;
+            this.DataGridViewCustomerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataGridViewCustomerInfo.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.DataGridViewCustomerInfo.Location = new System.Drawing.Point(5, 45);
+            this.DataGridViewCustomerInfo.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
+            this.DataGridViewCustomerInfo.Name = "DataGridViewCustomerInfo";
+            this.DataGridViewCustomerInfo.ReadOnly = true;
+            this.DataGridViewCustomerInfo.RowTemplate.Height = 30;
+            this.DataGridViewCustomerInfo.Size = new System.Drawing.Size(1235, 549);
+            this.DataGridViewCustomerInfo.TabIndex = 2;
+            this.DataGridViewCustomerInfo.SelectionChanged += new System.EventHandler(this.DataGridViewCustomerInfo_SelectionChanged);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // flowLayoutPanel1
             // 
@@ -70,7 +89,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1205, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1239, 29);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -98,75 +117,32 @@
             this.LblUserName.TabIndex = 1;
             this.LblUserName.Text = "label2";
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 38);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.DataGridViewCustomerInfo);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.BtnAddCustomerInfo);
-            this.splitContainer1.Size = new System.Drawing.Size(1205, 394);
-            this.splitContainer1.SplitterDistance = 259;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // DataGridViewCustomerInfo
-            // 
-            this.DataGridViewCustomerInfo.AllowUserToAddRows = false;
-            this.DataGridViewCustomerInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridViewCustomerInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DataGridViewCustomerInfo.Location = new System.Drawing.Point(0, 0);
-            this.DataGridViewCustomerInfo.Name = "DataGridViewCustomerInfo";
-            this.DataGridViewCustomerInfo.RowTemplate.Height = 30;
-            this.DataGridViewCustomerInfo.Size = new System.Drawing.Size(1205, 259);
-            this.DataGridViewCustomerInfo.TabIndex = 0;
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(0);
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(3, 438);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 607);
             this.statusStrip1.Margin = new System.Windows.Forms.Padding(3);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1205, 19);
+            this.statusStrip1.Size = new System.Drawing.Size(1239, 19);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // BtnAddCustomerInfo
-            // 
-            this.BtnAddCustomerInfo.Location = new System.Drawing.Point(857, 17);
-            this.BtnAddCustomerInfo.Name = "BtnAddCustomerInfo";
-            this.BtnAddCustomerInfo.Size = new System.Drawing.Size(339, 49);
-            this.BtnAddCustomerInfo.TabIndex = 0;
-            this.BtnAddCustomerInfo.Text = "添加客户信息";
-            this.BtnAddCustomerInfo.UseVisualStyleBackColor = true;
-            this.BtnAddCustomerInfo.Click += new System.EventHandler(this.BtnAddCustomerInfo_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1211, 460);
+            this.ClientSize = new System.Drawing.Size(1245, 629);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmMain";
             this.Text = "客户跟进系统";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomerInfo)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomerInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,12 +150,11 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblUserName;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.DataGridView DataGridViewCustomerInfo;
-        private System.Windows.Forms.Button BtnAddCustomerInfo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

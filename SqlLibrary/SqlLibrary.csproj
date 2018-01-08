@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="CFUSystem.cs" />
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="DataStructure\CustomerFollowUpLog.cs" />
+    <Compile Include="DataStructure\CustomerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableCustomerManage.cs" />
     <Compile Include="TableUsersManage.cs" />

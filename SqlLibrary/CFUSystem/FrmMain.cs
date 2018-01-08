@@ -15,12 +15,11 @@ namespace CFUManageSystem
     public partial class FrmMain : Form
     {
         public string UserName { get; set; }
+        //private List<object> SelectedCustomerIds { get; set; }
 
         public FrmMain()
         {
             InitializeComponent();
-
-            //DataGridViewCustomerInfo.AutoGenerateColumns = false;
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -42,6 +41,8 @@ namespace CFUManageSystem
                 DataGridViewCustomerInfo.DataSource = dataSet;
                 DataGridViewCustomerInfo.DataMember = "TB_CustomerInfo";
                 FormatDataGridView(DataGridViewCustomerInfo);
+
+                //this.SelectedCustomerIds = new List<object>();
             }
             catch (Exception ex)
             {
@@ -63,6 +64,9 @@ namespace CFUManageSystem
                 col.Width = 100;
                 col.ReadOnly = true;
                 col.DisplayIndex = i++;
+
+                col = grid.Columns["Sort"];
+                col.Visible = false;
 
                 col = grid.Columns["CompanyName"];
                 col.HeaderText = "公司名称";
@@ -164,14 +168,81 @@ namespace CFUManageSystem
             }
         }
 
-        private void BtnAddCustomerInfo_Click(object sender, EventArgs e)
+        private void DataGridViewCustomerInfo_SelectionChanged(object sender, EventArgs e)
+        {
+            int count = DataGridViewCustomerInfo.SelectedRows.Count;
+
+            contextMenuStrip1.Items.Clear();
+
+            ToolStripMenuItem tsmiAdd = new ToolStripMenuItem();
+            tsmiAdd.Text = "新增客户信息";
+            tsmiAdd.Click += TsmiAdd_Click;
+            contextMenuStrip1.Items.Add(tsmiAdd);
+
+            if (count > 0)
+            {
+                if (1 == count)
+                {
+                    ToolStripMenuItem tsmiEdit = new ToolStripMenuItem();
+                    tsmiEdit.Text = "编辑";
+                    tsmiEdit.Click += TsmiEdit_Click;
+                    contextMenuStrip1.Items.Add(tsmiEdit);
+                }
+
+                ToolStripMenuItem tsmiDelete = new ToolStripMenuItem();
+                tsmiDelete.Text = "删除";
+                tsmiDelete.Click += TsmiDelete_Click;
+                contextMenuStrip1.Items.Add(tsmiDelete);
+            }
+        }
+
+        private void TsmiAdd_Click(object sender, EventArgs e)
         {
             FrmCustomerInfo frmCustomerInfo = new FrmCustomerInfo();
+            frmCustomerInfo.WorkingState = WorkingState.Add;
+            frmCustomerInfo.Seller = this.UserName;
             DialogResult dialogResult = frmCustomerInfo.ShowDialog(this);
             if (DialogResult.OK == dialogResult)
             {
 
             }
         }
+
+        private void TsmiEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                object objId = DataGridViewCustomerInfo.SelectedRows[0].Cells["Id"];
+                int id = Convert.ToInt32(objId);
+                FrmCustomerInfo frmCustomerInfo = new FrmCustomerInfo
+                {
+                    WorkingState = WorkingState.Modify,
+                    CustomerId = id,
+                    Seller = this.UserName
+                };
+                DialogResult dialogResult = frmCustomerInfo.ShowDialog(this);
+                if (DialogResult.OK == dialogResult)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TsmiDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

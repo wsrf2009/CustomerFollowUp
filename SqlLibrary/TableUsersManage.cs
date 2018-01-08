@@ -44,13 +44,13 @@ namespace SqlLibrary
         public static int AddUserLoginLog(string userName, string dateTime, string mac, string lanIp, string hostName, string sysUserName)
         {
             string sqlCmd = "insert into TB_LoginLogs (Name, Login, LoginLanIp, LoginHostName, LoginMac, LoginUserName) values ('" + userName + "','" + dateTime + "','" + lanIp + "','" + hostName + "','" + mac + "','" + sysUserName + "')";
-            return DatabaseHelper.ExecuteCommand(sqlCmd);
+            return DatabaseHelper.ExecuteNonQuery(sqlCmd);
         }
 
         public static int ModifyUserLastLoginLog(string userName, string dateTime, string mac, string lanIp, string hostName, string sysUserName)
         {
             string sqlCmd = "update TB_Users set LastLogin = '" + dateTime + "', LastLoginLanIp = '" + lanIp + "', LastLoginMac = '" + mac + "', LastLoginHostName = '" + hostName + "', LastLoginUserName = '" + sysUserName + "' where Name = '" + userName +"'";
-            return DatabaseHelper.ExecuteCommand(sqlCmd);
+            return DatabaseHelper.ExecuteNonQuery(sqlCmd);
         }
     }
 }

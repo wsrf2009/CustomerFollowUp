@@ -1,4 +1,4 @@
-﻿namespace CFUManageSystem
+﻿namespace CFUSystem
 {
     partial class FrmFollowUpLog
     {
@@ -299,7 +299,7 @@
             this.ClientSize = new System.Drawing.Size(1026, 643);
             this.Controls.Add(this.tableLayoutPanel11);
             this.Name = "FrmFollowUpLog";
-            this.Text = "FrmFollowUpLog";
+            this.Text = "客户跟进";
             this.Load += new System.EventHandler(this.FrmFollowUpLog_Load);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);

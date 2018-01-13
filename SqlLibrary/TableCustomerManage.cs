@@ -11,7 +11,7 @@ namespace SqlLibrary
     public class TableCustomerManage
     {
         #region 客户信息
-        public static int AddCustomerReturnIdentity(DateTime archivingDate, string sort,
+        public static int AddCustomerReturnIdentity(string archivingDate, string sort,
             string contacts, string email,
             string company, string website,
             string country, string address,
@@ -19,7 +19,7 @@ namespace SqlLibrary
             string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
             string comefrom, string belongsto,
             string remarks,
-            DateTime modify,
+            string modify,
             string FUTime, string FUBriefing, string FULog)
         {
             string sqlCmd = "insert into TB_CustomerInfo (" +
@@ -53,7 +53,7 @@ namespace SqlLibrary
             return DatabaseHelper.ExecuteNonQuery(sqlCmd);
         }
 
-        public static SqlDataAdapter QueryCustomerInfoBySeller(string userName)
+        public static DataSet QueryCustomerInfoBySeller(string userName)
         {
             SqlConnection sqlConnection = DatabaseHelper.CreateDatabaseHandler();
             sqlConnection.Open();
@@ -66,7 +66,10 @@ namespace SqlLibrary
             };       //实例化数据适配器
             sqlConnection.Close();
 
-            return sqlDataAdapter;
+            DataSet dataSet = new DataSet();
+            int n = sqlDataAdapter.Fill(dataSet, "TB_CustomerInfo");
+
+            return dataSet;
         }
 
         public static int ModifyCustomerInfoById(int id,
@@ -78,7 +81,7 @@ namespace SqlLibrary
             string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
             string comefrom,
             string remarks,
-            DateTime modify)
+            string  modify)
         {
             string sqlCmd = "update TB_CustomerInfo set " +
                 "Sort = '" + sort + "', " +
@@ -97,9 +100,9 @@ namespace SqlLibrary
 
         #region 客户跟进记录
         public static int AddFollowUpLogReturnIdentity(string email, string company, int customerId,
-            int number, DateTime dateTime, string state,
+            int number, string  dateTime, string state,
             string briefing, string content,
-            DateTime modify, string seller)
+            string modify, string seller)
         {
             string sqlCmd = "insert into TB_CustomerFollowUpLogs (" +
                 "Email, CompanyName, CustomerInfoId, " +
@@ -159,7 +162,7 @@ namespace SqlLibrary
             string email, string company, int customerId,
             int number, string state,
             string briefing, string content,
-            DateTime modify, string seller)
+            string modify, string seller)
         {
             string sqlCmd = "update TB_CustomerFollowUpLogs set " +
                 "Email = '" + email + "', CompanyName = '" + company + "', CustomerInfoId = '" + customerId + "', " +

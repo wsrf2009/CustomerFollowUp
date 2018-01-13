@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C308D93E-79FD-48C8-9576-25122BDA80AC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CFUManageSystem</RootNamespace>
-    <AssemblyName>CFUManageSystem</AssemblyName>
+    <RootNamespace>CFUSystem</RootNamespace>
+    <AssemblyName>CFUSystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -61,7 +61,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountInfo.Designer.cs">
+      <DependentUpon>AccountInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccountList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccountList.Designer.cs">
+      <DependentUpon>AccountList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddAccount.Designer.cs">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntityConverter.cs" />
+    <Compile Include="FrmAccountManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAccountManager.Designer.cs">
+      <DependentUpon>FrmAccountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCustomerInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,11 +116,39 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifyPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifyPassword.Designer.cs">
+      <DependentUpon>FrmModifyPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginLogs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginLogs.Designer.cs">
+      <DependentUpon>LoginLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\AppConfigHelper.cs" />
     <Compile Include="Tools\SettingsHelper.cs" />
     <Compile Include="WorkingState.cs" />
+    <EmbeddedResource Include="AccountInfo.resx">
+      <DependentUpon>AccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountList.resx">
+      <DependentUpon>AccountList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAccount.resx">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAccountManager.resx">
+      <DependentUpon>FrmAccountManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomerInfo.resx">
       <DependentUpon>FrmCustomerInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifyPassword.resx">
+      <DependentUpon>FrmModifyPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginLogs.resx">
+      <DependentUpon>LoginLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

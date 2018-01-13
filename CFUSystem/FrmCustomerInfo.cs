@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace CFUManageSystem
+namespace CFUSystem
 {
     public partial class FrmCustomerInfo : Form
     {
@@ -50,7 +50,7 @@ namespace CFUManageSystem
                 }
                 else if (WorkingState.Modify == this.WorkingState)
                 {
-                    DTPArchiving.Value = this.Customer.ArchivingTime;
+                    DTPArchiving.Value = Convert.ToDateTime(this.Customer.ArchivingTime);
                     ComboBoxSort.Text = this.Customer.Sort;
                     TxtBoxContacts.Text = this.Customer.Contacts;
                     TxtBoxEmail.Text = this.Customer.Email;
@@ -744,7 +744,7 @@ namespace CFUManageSystem
             try
             {
                 string email = this.Customer.Email = TxtBoxEmail.Text.Trim();
-                DateTime archivingDate = this.Customer.ArchivingTime = DTPArchiving.Value.ToLocalTime();
+                string archivingDate = this.Customer.ArchivingTime = DTPArchiving.Value.ToString();
                 string sort = this.Customer.Sort = ComboBoxSort.Text.Trim();
                 string contacts = this.Customer.Contacts = TxtBoxContacts.Text.Trim();
                 string company = this.Customer.CompanyName = TxtBoxCompanyName.Text.Trim();
@@ -766,7 +766,7 @@ namespace CFUManageSystem
                 string comefrom = this.Customer.ComeFrom = TxtBoxComeFrom.Text.Trim();
                 string belongsto = this.Customer.BelongsTo = TxtBoxBelongsTo.Text.Trim();
                 string remarks = this.Customer.Remarks = TxtBoxRemarks.Text.Trim();
-                DateTime modify = this.Customer.Modify = DateTime.Now.ToLocalTime();
+                string modify = this.Customer.Modify = DateTime.Now.ToLocalTime().ToString();
                 string futime = this.Customer.LastFollowUpTime = "";
                 string fubriefing = this.Customer.LastFollowUpBriefing = "";
                 string fustate = this.Customer.LastFollowUpState = "";
@@ -908,13 +908,14 @@ namespace CFUManageSystem
         {
             try
             {
-                //显示在HeaderCell上
-                for (int i = 0; i < this.DataGridViewFollowUpLogs.Rows.Count; i++)
-                {
-                    DataGridViewRow r = this.DataGridViewFollowUpLogs.Rows[i];
-                    r.HeaderCell.Value = string.Format("{0}", i + 1);
-                }
-                this.DataGridViewFollowUpLogs.Refresh();
+                ////显示在HeaderCell上
+                //for (int i = 0; i < this.DataGridViewFollowUpLogs.Rows.Count; i++)
+                //{
+                //    DataGridViewRow r = this.DataGridViewFollowUpLogs.Rows[i];
+                //    r.HeaderCell.Value = string.Format("{0}", i + 1);
+                //}
+                //this.DataGridViewFollowUpLogs.Refresh();
+                e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
             }
             catch (Exception ex)
             {

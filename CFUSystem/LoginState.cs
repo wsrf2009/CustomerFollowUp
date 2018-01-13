@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CFUSystem
 {
-    public enum WorkingState
+    public enum LoginState
     {
-        Add = 1,
-        Modify = 2
+        Login = 1,
+        Logout = 2,
     }
 }

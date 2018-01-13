@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CFUManageSystem
+namespace CFUSystem
 {
     public partial class FrmFollowUpLog : Form
     {
@@ -46,7 +46,7 @@ namespace CFUManageSystem
             else if (WorkingState.Modify == this.FollowUpWorkingState)
             {
                 NumUpDownNumber.Value = this.FollowUpLog.Number;
-                DTPDate.Value = this.FollowUpLog.Time;
+                DTPDate.Value = Convert.ToDateTime(this.FollowUpLog.Time);
                 ComboBoxState.Text = this.FollowUpLog.State;
                 TxtBoxBriefing.Text = this.FollowUpLog.Briefing;
                 RichTxtBoxContent.Text = this.FollowUpLog.Content;
@@ -200,11 +200,11 @@ namespace CFUManageSystem
                 string email = this.FollowUpLog.Email = this.Customer.Email; // TxtBoxEmail.Text.Trim();
                 string company = this.FollowUpLog.CompanyName = this.Customer.CompanyName; // TxtBoxCompanyName.Text.Trim();
                 int number = this.FollowUpLog.Number = Convert.ToInt32(NumUpDownNumber.Value);
-                DateTime datetime = this.FollowUpLog.Time = DTPDate.Value.ToLocalTime();
+                string datetime = this.FollowUpLog.Time = DTPDate.Value.ToLocalTime().ToString();
                 string state = this.FollowUpLog.State = ComboBoxState.Text.Trim();
                 string briefing = this.FollowUpLog.Briefing = TxtBoxBriefing.Text.Trim();
                 string content = this.FollowUpLog.Content = RichTxtBoxContent.Text.Trim();
-                DateTime modify = this.FollowUpLog.Modify = DateTime.Now.ToLocalTime();
+                string modify = this.FollowUpLog.Modify = DateTime.Now.ToLocalTime().ToString();
                 string seller = this.FollowUpLog.BelongsTo = this.Customer.BelongsTo;
 
                 if (WorkingState.Add == this.FollowUpWorkingState)

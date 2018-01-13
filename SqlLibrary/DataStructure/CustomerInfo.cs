@@ -9,7 +9,7 @@ namespace SqlLibrary.DataStructure
     public class CustomerInfo
     {
         public int Id { get; set; }
-        public DateTime ArchivingTime { get; set; }
+        public string ArchivingTime { get; set; }
         public string Sort { get; set; }
         public string CompanyName { get; set; }
         public string Website { get; set; }
@@ -32,7 +32,7 @@ namespace SqlLibrary.DataStructure
         public string ComeFrom { get; set; }
         public string BelongsTo { get; set; }
         public string Remarks { get; set; }
-        public DateTime Modify { get; set; }
+        public string Modify { get; set; }
         public string LastFollowUpTime { get; set; }
         public string LastFollowUpBriefing { get; set; }
         public string LastFollowUpState { get; set; }

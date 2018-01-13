@@ -1,15 +1,20 @@
-﻿using CFUManageSystem.Tools;
+﻿using CFUSystem.Tools;
 using SqlLibrary;
+using SqlLibrary.DataStructure;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using SystemLibrary;
 
-namespace WindowsFormsApp1
+namespace CFUSystem
 {
     public partial class FrmLogin : Form
     {
+        public UserInfo User { get; set; }
         public string UserName { get; set; }
+        public LoginLog LoginLog { get; set; }
+        public int LoginLogId { get; set; }
 
         public FrmLogin()
         {
@@ -39,8 +44,8 @@ namespace WindowsFormsApp1
                     return;
                 }
 
-                bool userIsExist = CFUSystem.QueryUserName(userName);
-                if (!userIsExist)
+                DataTable dataTable = TableUsersManage.QueryUserName(userName);
+                if (dataTable.Rows.Count <= 0)
                 {
                     txtBoxErrMessage.Visible = true;
                     txtBoxErrMessage.Text = "用户不存在";
@@ -51,14 +56,10 @@ namespace WindowsFormsApp1
 
                 string password = txtBoxPassword.Text.Trim();
                 bool isRememberPassword = ckBoxRememberPassword.Checked;
-
-                Console.WriteLine("userName:" + userName + " password:" + password + " isRememberPassword:" + isRememberPassword);
-
-                bool loginResult = CFUSystem.Login(userName, password);
-
-                Console.WriteLine("loginResult:" + loginResult);
-
-                if (loginResult)
+                DataRow dataRow = dataTable.Rows[0];
+                var item = dataRow.ToExpression<UserInfo>();
+                this.User = item(dataRow);
+                if(this.User.Password.Equals(password))
                 {
                     if (isRememberPassword)
                     {
@@ -73,15 +74,27 @@ namespace WindowsFormsApp1
                     string hostName = SystemInfo.GetHostName();
                     string sysUserName = SystemInfo.GetUserName();
 
-                    Console.WriteLine("username:" + userName + "mac:" + mac + " LanIp:" + lanIp + " hostName:" + hostName + " datetime:" + datetime);
+                    this.LoginLogId = TableUsersManage.AddUserLoginLogAndReturnIdentity(userName, datetime, mac, lanIp, hostName, sysUserName, this.User.Id);
+                    if (this.LoginLogId >= 0)
+                    {
+                        //int suc = TableUsersManage.ModifyUserLastLoginLogByUserName(userName, datetime, mac, lanIp, hostName, sysUserName);
+                        //if (suc > 0)
+                        //{
+                            this.UserName = userName;
+                            this.DialogResult = DialogResult.OK;
 
-                    CFUSystem.AddLoginLog(userName, datetime, mac, lanIp, hostName, sysUserName);
-                    CFUSystem.ModifyLastLoginLog(userName, datetime, mac, lanIp, hostName, sysUserName);
+                            this.Close();
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show(this, "服务器连接错误！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //}
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "服务器连接错误！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    this.UserName = userName;
-                    this.DialogResult = DialogResult.OK;
-
-                    this.Close();
+                    }
                 }
                 else
                 {

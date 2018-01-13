@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace CFUSystem
 {
     partial class FrmLogin
     {
@@ -120,7 +120,7 @@
             this.Name = "FrmLogin";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "客户跟进系统登录";
+            this.Text = "登录";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,24 +1,19 @@
-﻿using SqlLibrary;
+﻿using CFUSystem;
+using SqlLibrary;
 using SqlLibrary.DataStructure;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1;
 
-namespace CFUManageSystem
+namespace CFUSystem
 {
     public partial class FrmMain : Form
     {
+        public UserInfo User { get; set; }
         public string UserName { get; set; }
+        public int LoginLogId { get; set; }
         private DataSet dataSet { get; set; }
+        private LoginState LoginState { get; set; }
 
         public FrmMain()
         {
@@ -29,18 +24,9 @@ namespace CFUManageSystem
         {
             try
             {
-                FrmLogin frmLogin = new FrmLogin();
-                frmLogin.ShowDialog(this);
-                if (DialogResult.OK != frmLogin.DialogResult)
-                {
-                    this.Close();
-                    return;
-                }
-                this.UserName = frmLogin.UserName;
+                Login();
 
-                LblUserName.Text = UserName;
-
-                LoadAllCustomer(this.UserName);
+                //LoadAllCustomer(this.UserName);
 
                 ToolStripMenuItem tsmiAdd = CreateAddCustomerInfoMenuItem();
                 contextMenuStrip1.Items.Add(tsmiAdd);
@@ -57,11 +43,19 @@ namespace CFUManageSystem
             }
         }
 
+        private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (LoginState.Login == this.LoginState)
+            {
+                TableUsersManage.ModifyUserLogoutById(DateTime.Now.ToLocalTime().ToString(), this.LoginLogId);
+            }
+        }
+
         private void LoadAllCustomer(string username)
         {
             DataGridViewCustomerInfo.ClearSelection();
 
-            dataSet = CFUSystem.QueryCustomerInfoBySellerName(this.UserName);
+            dataSet = TableCustomerManage.QueryCustomerInfoBySeller(this.UserName);
             DataGridViewCustomerInfo.DataSource = dataSet.Tables["TB_CustomerInfo"]; //dataSet;
             FormatDataGridView(DataGridViewCustomerInfo);
         }
@@ -186,7 +180,8 @@ namespace CFUManageSystem
 
         private void DataGridViewCustomerInfo_SelectionChanged(object sender, EventArgs e)
         {
-            try {
+            try
+            {
 
             }
             catch (Exception ex)
@@ -275,17 +270,17 @@ namespace CFUManageSystem
         {
             try
             {
-                int rowIndex = e.RowIndex;
-                int count = DataGridViewCustomerInfo.SelectedRows.Count;
-                if (count > 0)
-                {
-                    var row = DataGridViewCustomerInfo.Rows[rowIndex];
-                    bool contains = DataGridViewCustomerInfo.SelectedRows.Contains(row);
-                    if (contains)
-                    {
-                        EditDataGridViewRow(row);
-                    }
-                }
+                //int rowIndex = e.RowIndex;
+                //int count = DataGridViewCustomerInfo.SelectedRows.Count;
+                //if (count > 0)
+                //{
+                //    var row = DataGridViewCustomerInfo.Rows[rowIndex];
+                //    bool contains = DataGridViewCustomerInfo.SelectedRows.Contains(row);
+                //    if (contains)
+                //    {
+                //        EditDataGridViewRow(row);
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -297,13 +292,14 @@ namespace CFUManageSystem
         {
             try
             {
-                //显示在HeaderCell上
-                for (int i = 0; i < this.DataGridViewCustomerInfo.Rows.Count; i++)
-                {
-                    DataGridViewRow r = this.DataGridViewCustomerInfo.Rows[i];
-                    r.HeaderCell.Value = string.Format("{0}", i + 1);
-                }
-                this.DataGridViewCustomerInfo.Refresh();
+                ////显示在HeaderCell上
+                //for (int i = 0; i < this.DataGridViewCustomerInfo.Rows.Count; i++)
+                //{
+                //    DataGridViewRow r = this.DataGridViewCustomerInfo.Rows[i];
+                //    r.HeaderCell.Value = string.Format("{0}", i + 1);
+                //}
+                //this.DataGridViewCustomerInfo.Refresh();
+                e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
             }
             catch (Exception ex)
             {
@@ -423,7 +419,7 @@ namespace CFUManageSystem
         {
             DataRow dataRow = (row.DataBoundItem as DataRowView).Row;
             var item = dataRow.ToExpression<CustomerInfo>();
-            Console.WriteLine("item:" + item);
+            //Console.WriteLine("item:" + item);
             FrmCustomerInfo frmCustomerInfo = new FrmCustomerInfo
             {
                 WorkingState = WorkingState.Modify,
@@ -435,6 +431,99 @@ namespace CFUManageSystem
             {
                 LoadAllCustomer(this.UserName);
             }
+        }
+
+        private void LblUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAccountManage_Click(object sender, EventArgs e)
+        {
+            FrmAccountManager frmAccountManager = new FrmAccountManager
+            {
+                UserName = this.UserName
+            };
+            DialogResult dialogResult = frmAccountManager.ShowDialog(this);
+            if(DialogResult.No == dialogResult)
+            {
+                if (LoginState.Login == this.LoginState)
+                {
+                    TableUsersManage.ModifyUserLogoutById(DateTime.Now.ToLocalTime().ToString(), this.LoginLogId);
+                    SetLoginState(LoginState.Logout);
+                }
+            }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (LoginState.Login == this.LoginState)
+                {
+                    DialogResult dialogResult = MessageBox.Show(this, "您确定要退出当前账户 " + this.UserName + " ?", this.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (DialogResult.OK == dialogResult)
+                    {
+                        TableUsersManage.ModifyUserLogoutById(DateTime.Now.ToLocalTime().ToString(), this.LoginLogId);
+                        SetLoginState(LoginState.Logout);
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else if (LoginState.Logout == this.LoginState)
+                {
+                    Login();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SetLoginState(LoginState state)
+        {
+            this.LoginState = state;
+            if (LoginState.Login == state)
+            {
+                label1.Visible = true;
+                LblUserName.Text = this.UserName;
+                this.BtnAccountManage.Visible = true;
+                this.BtnExit.Text = "退出";
+            }
+            else
+            {
+                this.UserName = "";
+                label1.Visible = false;
+                LblUserName.Text = "";
+                this.BtnAccountManage.Visible = false;
+                this.BtnExit.Text = "登录";
+
+                DataTable dt = (DataTable)this.DataGridViewCustomerInfo.DataSource;
+                dt.Rows.Clear();
+                this.DataGridViewCustomerInfo.DataSource = dt;
+            }
+        }
+
+        private void Login()
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.ShowDialog(this);
+            if (DialogResult.OK != frmLogin.DialogResult)
+            {
+                this.Close();
+                return;
+            }
+
+            this.User = frmLogin.User;
+            this.UserName = frmLogin.UserName;
+            this.LoginLogId = frmLogin.LoginLogId;
+
+            SetLoginState(LoginState.Login);
+
+            LoadAllCustomer(this.UserName);
         }
     }
 }

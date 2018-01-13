@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CFUManageSystem.Properties {
+namespace CFUSystem.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

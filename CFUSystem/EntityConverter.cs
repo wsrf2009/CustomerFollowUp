@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CFUManageSystem
+namespace CFUSystem
 {
     public static class EntityConverter
     {

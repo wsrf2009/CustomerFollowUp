@@ -1,4 +1,4 @@
-﻿namespace CFUManageSystem
+﻿namespace CFUSystem
 {
     partial class FrmCustomerInfo
     {
@@ -205,7 +205,7 @@
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel19.Size = new System.Drawing.Size(1007, 70);
+            this.tableLayoutPanel19.Size = new System.Drawing.Size(1004, 70);
             this.tableLayoutPanel19.TabIndex = 0;
             // 
             // label22
@@ -227,7 +227,7 @@
             this.DTPArchiving.Location = new System.Drawing.Point(136, 31);
             this.DTPArchiving.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.DTPArchiving.Name = "DTPArchiving";
-            this.DTPArchiving.Size = new System.Drawing.Size(361, 33);
+            this.DTPArchiving.Size = new System.Drawing.Size(360, 33);
             this.DTPArchiving.TabIndex = 2;
             this.DTPArchiving.ValueChanged += new System.EventHandler(this.DTPArchiving_ValueChanged);
             // 
@@ -236,7 +236,7 @@
             this.label27.AutoSize = true;
             this.label27.Dock = System.Windows.Forms.DockStyle.Right;
             this.label27.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label27.Location = new System.Drawing.Point(519, 35);
+            this.label27.Location = new System.Drawing.Point(518, 35);
             this.label27.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(109, 30);
@@ -251,10 +251,10 @@
             this.ComboBoxSort.FormattingEnabled = true;
             this.ComboBoxSort.Items.AddRange(new object[] {
             "机器"});
-            this.ComboBoxSort.Location = new System.Drawing.Point(639, 31);
+            this.ComboBoxSort.Location = new System.Drawing.Point(638, 31);
             this.ComboBoxSort.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.ComboBoxSort.Name = "ComboBoxSort";
-            this.ComboBoxSort.Size = new System.Drawing.Size(362, 30);
+            this.ComboBoxSort.Size = new System.Drawing.Size(360, 30);
             this.ComboBoxSort.TabIndex = 4;
             this.ComboBoxSort.TextUpdate += new System.EventHandler(this.ComboBoxSort_TextUpdate);
             // 
@@ -277,7 +277,7 @@
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(1007, 70);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(1004, 70);
             this.tableLayoutPanel20.TabIndex = 1;
             // 
             // label8
@@ -299,7 +299,7 @@
             this.TxtBoxContacts.Location = new System.Drawing.Point(136, 21);
             this.TxtBoxContacts.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxContacts.Name = "TxtBoxContacts";
-            this.TxtBoxContacts.Size = new System.Drawing.Size(361, 33);
+            this.TxtBoxContacts.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxContacts.TabIndex = 2;
             this.TxtBoxContacts.TextChanged += new System.EventHandler(this.TxtBoxContacts_TextChanged);
             // 
@@ -308,7 +308,7 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Right;
             this.label9.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(549, 25);
+            this.label9.Location = new System.Drawing.Point(548, 25);
             this.label9.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 30);
@@ -319,10 +319,10 @@
             // 
             this.TxtBoxEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxEmail.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxEmail.Location = new System.Drawing.Point(639, 21);
+            this.TxtBoxEmail.Location = new System.Drawing.Point(638, 21);
             this.TxtBoxEmail.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxEmail.Name = "TxtBoxEmail";
-            this.TxtBoxEmail.Size = new System.Drawing.Size(362, 33);
+            this.TxtBoxEmail.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxEmail.TabIndex = 4;
             this.TxtBoxEmail.TextChanged += new System.EventHandler(this.TxtBoxEmail_TextChanged);
             // 
@@ -345,7 +345,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1007, 70);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1004, 70);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // label1
@@ -369,7 +369,7 @@
             this.TxtBoxCompanyName.Location = new System.Drawing.Point(136, 21);
             this.TxtBoxCompanyName.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxCompanyName.Name = "TxtBoxCompanyName";
-            this.TxtBoxCompanyName.Size = new System.Drawing.Size(361, 33);
+            this.TxtBoxCompanyName.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxCompanyName.TabIndex = 2;
             this.TxtBoxCompanyName.TextChanged += new System.EventHandler(this.TxtBoxCompanyName_TextChanged);
             // 
@@ -378,7 +378,7 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(559, 25);
+            this.label2.Location = new System.Drawing.Point(558, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 30);
@@ -389,10 +389,10 @@
             // 
             this.TxtBoxWebsite.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxWebsite.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxWebsite.Location = new System.Drawing.Point(639, 21);
+            this.TxtBoxWebsite.Location = new System.Drawing.Point(638, 21);
             this.TxtBoxWebsite.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxWebsite.Name = "TxtBoxWebsite";
-            this.TxtBoxWebsite.Size = new System.Drawing.Size(362, 33);
+            this.TxtBoxWebsite.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxWebsite.TabIndex = 4;
             this.TxtBoxWebsite.TextChanged += new System.EventHandler(this.TxtBoxWebsite_TextChanged);
             // 
@@ -415,7 +415,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1007, 70);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1004, 70);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // label3
@@ -437,7 +437,7 @@
             this.TxtBoxCountry.Location = new System.Drawing.Point(136, 21);
             this.TxtBoxCountry.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxCountry.Name = "TxtBoxCountry";
-            this.TxtBoxCountry.Size = new System.Drawing.Size(361, 33);
+            this.TxtBoxCountry.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxCountry.TabIndex = 2;
             this.TxtBoxCountry.TextChanged += new System.EventHandler(this.TxtBoxCountry_TextChanged);
             // 
@@ -446,7 +446,7 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(559, 25);
+            this.label5.Location = new System.Drawing.Point(558, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 30);
@@ -457,10 +457,10 @@
             // 
             this.TxtBoxAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxAddress.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxAddress.Location = new System.Drawing.Point(639, 21);
+            this.TxtBoxAddress.Location = new System.Drawing.Point(638, 21);
             this.TxtBoxAddress.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxAddress.Name = "TxtBoxAddress";
-            this.TxtBoxAddress.Size = new System.Drawing.Size(362, 33);
+            this.TxtBoxAddress.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxAddress.TabIndex = 4;
             this.TxtBoxAddress.TextChanged += new System.EventHandler(this.TxtBoxAddress_TextChanged);
             // 
@@ -486,7 +486,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1007, 130);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1004, 130);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // label4
@@ -508,7 +508,7 @@
             this.TxtBoxBusinessScope.Location = new System.Drawing.Point(136, 21);
             this.TxtBoxBusinessScope.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxBusinessScope.Name = "TxtBoxBusinessScope";
-            this.TxtBoxBusinessScope.Size = new System.Drawing.Size(361, 33);
+            this.TxtBoxBusinessScope.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxBusinessScope.TabIndex = 2;
             this.TxtBoxBusinessScope.TextChanged += new System.EventHandler(this.TxtBoxBusinessScope_TextChanged);
             // 
@@ -517,7 +517,7 @@
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(559, 25);
+            this.label6.Location = new System.Drawing.Point(558, 25);
             this.label6.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 30);
@@ -528,10 +528,10 @@
             // 
             this.TxtBoxType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxType.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxType.Location = new System.Drawing.Point(639, 21);
+            this.TxtBoxType.Location = new System.Drawing.Point(638, 21);
             this.TxtBoxType.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxType.Name = "TxtBoxType";
-            this.TxtBoxType.Size = new System.Drawing.Size(362, 33);
+            this.TxtBoxType.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxType.TabIndex = 4;
             this.TxtBoxType.TextChanged += new System.EventHandler(this.TxtBoxType_TextChanged);
             // 
@@ -554,7 +554,7 @@
             this.TxtBoxDemand.Location = new System.Drawing.Point(136, 71);
             this.TxtBoxDemand.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxDemand.Name = "TxtBoxDemand";
-            this.TxtBoxDemand.Size = new System.Drawing.Size(361, 33);
+            this.TxtBoxDemand.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxDemand.TabIndex = 6;
             this.TxtBoxDemand.TextChanged += new System.EventHandler(this.TxtBoxDemand_TextChanged);
             // 
@@ -575,7 +575,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1007, 170);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1004, 170);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // tableLayoutPanel7
@@ -599,7 +599,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1007, 50);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1004, 50);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // label10
@@ -622,7 +622,7 @@
             this.TxtBoxTelephone.Location = new System.Drawing.Point(136, 11);
             this.TxtBoxTelephone.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxTelephone.Name = "TxtBoxTelephone";
-            this.TxtBoxTelephone.Size = new System.Drawing.Size(193, 33);
+            this.TxtBoxTelephone.Size = new System.Drawing.Size(192, 33);
             this.TxtBoxTelephone.TabIndex = 2;
             this.TxtBoxTelephone.TextChanged += new System.EventHandler(this.TxtBoxTelephone_TextChanged);
             // 
@@ -631,7 +631,7 @@
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Right;
             this.label11.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(391, 15);
+            this.label11.Location = new System.Drawing.Point(390, 15);
             this.label11.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 30);
@@ -643,10 +643,10 @@
             // 
             this.TxtBoxFax.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxFax.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxFax.Location = new System.Drawing.Point(471, 11);
+            this.TxtBoxFax.Location = new System.Drawing.Point(470, 11);
             this.TxtBoxFax.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxFax.Name = "TxtBoxFax";
-            this.TxtBoxFax.Size = new System.Drawing.Size(193, 33);
+            this.TxtBoxFax.Size = new System.Drawing.Size(192, 33);
             this.TxtBoxFax.TabIndex = 4;
             this.TxtBoxFax.TextChanged += new System.EventHandler(this.TxtBoxFax_TextChanged);
             // 
@@ -655,7 +655,7 @@
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Right;
             this.label12.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(726, 15);
+            this.label12.Location = new System.Drawing.Point(724, 15);
             this.label12.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(69, 30);
@@ -667,10 +667,10 @@
             // 
             this.TxtBoxMobile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxMobile.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxMobile.Location = new System.Drawing.Point(806, 11);
+            this.TxtBoxMobile.Location = new System.Drawing.Point(804, 11);
             this.TxtBoxMobile.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxMobile.Name = "TxtBoxMobile";
-            this.TxtBoxMobile.Size = new System.Drawing.Size(195, 33);
+            this.TxtBoxMobile.Size = new System.Drawing.Size(194, 33);
             this.TxtBoxMobile.TabIndex = 6;
             this.TxtBoxMobile.TextChanged += new System.EventHandler(this.TxtBoxMobile_TextChanged);
             // 
@@ -695,7 +695,7 @@
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1007, 50);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1004, 50);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // label13
@@ -718,7 +718,7 @@
             this.TxtBoxMSN.Location = new System.Drawing.Point(136, 11);
             this.TxtBoxMSN.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxMSN.Name = "TxtBoxMSN";
-            this.TxtBoxMSN.Size = new System.Drawing.Size(193, 33);
+            this.TxtBoxMSN.Size = new System.Drawing.Size(192, 33);
             this.TxtBoxMSN.TabIndex = 2;
             this.TxtBoxMSN.TextChanged += new System.EventHandler(this.TxtBoxMSN_TextChanged);
             // 
@@ -727,7 +727,7 @@
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Right;
             this.label14.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(381, 15);
+            this.label14.Location = new System.Drawing.Point(380, 15);
             this.label14.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(79, 30);
@@ -739,10 +739,10 @@
             // 
             this.TxtBoxSkype.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxSkype.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxSkype.Location = new System.Drawing.Point(471, 11);
+            this.TxtBoxSkype.Location = new System.Drawing.Point(470, 11);
             this.TxtBoxSkype.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxSkype.Name = "TxtBoxSkype";
-            this.TxtBoxSkype.Size = new System.Drawing.Size(193, 33);
+            this.TxtBoxSkype.Size = new System.Drawing.Size(192, 33);
             this.TxtBoxSkype.TabIndex = 4;
             this.TxtBoxSkype.TextChanged += new System.EventHandler(this.TxtBoxSkype_TextChanged);
             // 
@@ -751,7 +751,7 @@
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Right;
             this.label15.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label15.Location = new System.Drawing.Point(706, 15);
+            this.label15.Location = new System.Drawing.Point(704, 15);
             this.label15.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 30);
@@ -763,10 +763,10 @@
             // 
             this.TxtBoxLinkin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxLinkin.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxLinkin.Location = new System.Drawing.Point(806, 11);
+            this.TxtBoxLinkin.Location = new System.Drawing.Point(804, 11);
             this.TxtBoxLinkin.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxLinkin.Name = "TxtBoxLinkin";
-            this.TxtBoxLinkin.Size = new System.Drawing.Size(195, 33);
+            this.TxtBoxLinkin.Size = new System.Drawing.Size(194, 33);
             this.TxtBoxLinkin.TabIndex = 6;
             this.TxtBoxLinkin.TextChanged += new System.EventHandler(this.TxtBoxLinkin_TextChanged);
             // 
@@ -791,7 +791,7 @@
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1007, 50);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1004, 50);
             this.tableLayoutPanel9.TabIndex = 3;
             // 
             // label16
@@ -814,7 +814,7 @@
             this.TxtBoxWhatsApp.Location = new System.Drawing.Point(136, 11);
             this.TxtBoxWhatsApp.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxWhatsApp.Name = "TxtBoxWhatsApp";
-            this.TxtBoxWhatsApp.Size = new System.Drawing.Size(193, 33);
+            this.TxtBoxWhatsApp.Size = new System.Drawing.Size(192, 33);
             this.TxtBoxWhatsApp.TabIndex = 2;
             this.TxtBoxWhatsApp.TextChanged += new System.EventHandler(this.TxtBoxWhatsApp_TextChanged);
             // 
@@ -823,7 +823,7 @@
             this.label17.AutoSize = true;
             this.label17.Dock = System.Windows.Forms.DockStyle.Right;
             this.label17.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(371, 15);
+            this.label17.Location = new System.Drawing.Point(370, 15);
             this.label17.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(89, 30);
@@ -835,10 +835,10 @@
             // 
             this.TxtBoxTwiter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxTwiter.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxTwiter.Location = new System.Drawing.Point(471, 11);
+            this.TxtBoxTwiter.Location = new System.Drawing.Point(470, 11);
             this.TxtBoxTwiter.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxTwiter.Name = "TxtBoxTwiter";
-            this.TxtBoxTwiter.Size = new System.Drawing.Size(193, 33);
+            this.TxtBoxTwiter.Size = new System.Drawing.Size(192, 33);
             this.TxtBoxTwiter.TabIndex = 4;
             this.TxtBoxTwiter.TextChanged += new System.EventHandler(this.TxtBoxTwiter_TextChanged);
             // 
@@ -847,7 +847,7 @@
             this.label18.AutoSize = true;
             this.label18.Dock = System.Windows.Forms.DockStyle.Right;
             this.label18.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label18.Location = new System.Drawing.Point(686, 15);
+            this.label18.Location = new System.Drawing.Point(684, 15);
             this.label18.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(109, 30);
@@ -859,10 +859,10 @@
             // 
             this.TxtBoxFacebook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxFacebook.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxFacebook.Location = new System.Drawing.Point(806, 11);
+            this.TxtBoxFacebook.Location = new System.Drawing.Point(804, 11);
             this.TxtBoxFacebook.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxFacebook.Name = "TxtBoxFacebook";
-            this.TxtBoxFacebook.Size = new System.Drawing.Size(195, 33);
+            this.TxtBoxFacebook.Size = new System.Drawing.Size(194, 33);
             this.TxtBoxFacebook.TabIndex = 6;
             this.TxtBoxFacebook.TextChanged += new System.EventHandler(this.TxtBoxFacebook_TextChanged);
             // 
@@ -885,7 +885,7 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1007, 70);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1004, 70);
             this.tableLayoutPanel10.TabIndex = 6;
             // 
             // label19
@@ -907,7 +907,7 @@
             this.TxtBoxComeFrom.Location = new System.Drawing.Point(136, 21);
             this.TxtBoxComeFrom.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxComeFrom.Name = "TxtBoxComeFrom";
-            this.TxtBoxComeFrom.Size = new System.Drawing.Size(361, 33);
+            this.TxtBoxComeFrom.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxComeFrom.TabIndex = 2;
             this.TxtBoxComeFrom.TextChanged += new System.EventHandler(this.TxtBoxComeFrom_TextChanged);
             // 
@@ -916,7 +916,7 @@
             this.label20.AutoSize = true;
             this.label20.Dock = System.Windows.Forms.DockStyle.Right;
             this.label20.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label20.Location = new System.Drawing.Point(559, 25);
+            this.label20.Location = new System.Drawing.Point(558, 25);
             this.label20.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(69, 30);
@@ -929,10 +929,10 @@
             this.TxtBoxBelongsTo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxBelongsTo.Enabled = false;
             this.TxtBoxBelongsTo.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxBelongsTo.Location = new System.Drawing.Point(639, 21);
+            this.TxtBoxBelongsTo.Location = new System.Drawing.Point(638, 21);
             this.TxtBoxBelongsTo.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxBelongsTo.Name = "TxtBoxBelongsTo";
-            this.TxtBoxBelongsTo.Size = new System.Drawing.Size(362, 33);
+            this.TxtBoxBelongsTo.Size = new System.Drawing.Size(360, 33);
             this.TxtBoxBelongsTo.TabIndex = 4;
             this.TxtBoxBelongsTo.Visible = false;
             this.TxtBoxBelongsTo.TextChanged += new System.EventHandler(this.TxtBoxBelongsTo_TextChanged);
@@ -952,7 +952,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(1007, 110);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(1004, 110);
             this.tableLayoutPanel14.TabIndex = 7;
             // 
             // TxtBoxRemarks
@@ -964,7 +964,7 @@
             this.TxtBoxRemarks.Multiline = true;
             this.TxtBoxRemarks.Name = "TxtBoxRemarks";
             this.TxtBoxRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtBoxRemarks.Size = new System.Drawing.Size(865, 68);
+            this.TxtBoxRemarks.Size = new System.Drawing.Size(862, 68);
             this.TxtBoxRemarks.TabIndex = 1;
             this.TxtBoxRemarks.TextChanged += new System.EventHandler(this.TxtBoxRemarks_TextChanged);
             // 
@@ -1068,7 +1068,7 @@
             this.ClientSize = new System.Drawing.Size(1048, 697);
             this.Controls.Add(this.tableLayoutPanel17);
             this.Name = "FrmCustomerInfo";
-            this.Text = "FrmCustomerInfo";
+            this.Text = "客户信息";
             this.Load += new System.EventHandler(this.FrmCustomerInfo_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

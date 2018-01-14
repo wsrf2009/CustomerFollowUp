@@ -2,6 +2,7 @@
 using SqlLibrary;
 using SqlLibrary.DataStructure;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -9,15 +10,26 @@ namespace CFUSystem
 {
     public partial class FrmMain : Form
     {
+        private const int PageSize = 50;
+        private const string AllUsers = "所有";
+
         public UserInfo User { get; set; }
         public string UserName { get; set; }
         public int LoginLogId { get; set; }
         private DataSet dataSet { get; set; }
         private LoginState LoginState { get; set; }
+        private int TotalNumber { get; set; }
+        private int TotalPageNumber { get; set; }
+        private int PageNumber { get; set; }
+        private List<UserInfo> Users { get; set; }
 
         public FrmMain()
         {
             InitializeComponent();
+
+            this.Users = new List<UserInfo>();
+
+            LoadAllUsers();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -26,7 +38,7 @@ namespace CFUSystem
             {
                 Login();
 
-                //LoadAllCustomer(this.UserName);
+                LoadCustomerInPage(1);
 
                 ToolStripMenuItem tsmiAdd = CreateAddCustomerInfoMenuItem();
                 contextMenuStrip1.Items.Add(tsmiAdd);
@@ -51,13 +63,37 @@ namespace CFUSystem
             }
         }
 
-        private void LoadAllCustomer(string username)
+        private void LoadCustomerInPage(int page)
         {
+            if (page < 1)
+            {
+                this.PageNumber = 1;
+            }
+            else if (page > this.TotalPageNumber)
+            {
+                this.PageNumber = this.TotalPageNumber;
+            }
+            else
+            {
+                this.PageNumber = page;
+            }
+
             DataGridViewCustomerInfo.ClearSelection();
 
-            dataSet = TableCustomerManage.QueryCustomerInfoBySeller(this.UserName);
-            DataGridViewCustomerInfo.DataSource = dataSet.Tables["TB_CustomerInfo"]; //dataSet;
+            DataTable dataTable = new DataTable();
+            if (this.UserName.Equals(AllUsers))
+            {
+                dataTable = TableCustomerManage.QueryCustomerByPage(this.PageNumber, PageSize);
+            }
+            else
+            {
+                dataTable = TableCustomerManage.QueryCustomerByUserNameAndPage(this.UserName, this.PageNumber, PageSize);
+            }
+
+            DataGridViewCustomerInfo.DataSource = dataTable;
             FormatDataGridView(DataGridViewCustomerInfo);
+
+            LblCurPage.Text = this.PageNumber + "/" + this.TotalPageNumber;
         }
 
         private void FormatDataGridView(DataGridView grid)
@@ -150,7 +186,16 @@ namespace CFUSystem
                 col.DisplayIndex = i++;
 
                 col = grid.Columns["BelongsTo"];
-                col.Visible = false;
+                if (this.UserName.Equals(AllUsers))
+                {
+                    col.HeaderText = "属于";
+                    col.Width = 100;
+                    col.DisplayIndex = i++;
+                }
+                else
+                {
+                    col.Visible = false;
+                }
 
                 col = grid.Columns["Remarks"];
                 col.Visible = false;
@@ -175,6 +220,42 @@ namespace CFUSystem
                 col.HeaderText = "最后跟进状态";
                 col.Width = 100;
                 col.DisplayIndex = i++;
+
+                col = grid.Columns["UsedBrands"];
+                col.Visible = false;
+
+                col = grid.Columns["DecisionMaker"];
+                col.Visible = false;
+
+                col = grid.Columns["NewProductRecommendReactionAcuity"];
+                col.Visible = false;
+
+                col = grid.Columns["Religion"];
+                col.Visible = false;
+
+                col = grid.Columns["CharacterTraits"];
+                col.Visible = false;
+
+                col = grid.Columns["AmountStratification"];
+                col.Visible = false;
+
+                col = grid.Columns["NormalCommunication"];
+                col.Visible = false;
+
+                col = grid.Columns["NormalPayment"];
+                col.Visible = false;
+
+                col = grid.Columns["CustomerSize"];
+                col.Visible = false;
+
+                col = grid.Columns["DeliveryTimeSensitivity"];
+                col.Visible = false;
+
+                col = grid.Columns["Loyalty"];
+                col.Visible = false;
+
+                col = grid.Columns["ProductFactors"];
+                col.Visible = false;
             }
         }
 
@@ -270,17 +351,7 @@ namespace CFUSystem
         {
             try
             {
-                //int rowIndex = e.RowIndex;
-                //int count = DataGridViewCustomerInfo.SelectedRows.Count;
-                //if (count > 0)
-                //{
-                //    var row = DataGridViewCustomerInfo.Rows[rowIndex];
-                //    bool contains = DataGridViewCustomerInfo.SelectedRows.Contains(row);
-                //    if (contains)
-                //    {
-                //        EditDataGridViewRow(row);
-                //    }
-                //}
+
             }
             catch (Exception ex)
             {
@@ -292,14 +363,125 @@ namespace CFUSystem
         {
             try
             {
-                ////显示在HeaderCell上
-                //for (int i = 0; i < this.DataGridViewCustomerInfo.Rows.Count; i++)
-                //{
-                //    DataGridViewRow r = this.DataGridViewCustomerInfo.Rows[i];
-                //    r.HeaderCell.Value = string.Format("{0}", i + 1);
-                //}
-                //this.DataGridViewCustomerInfo.Refresh();
                 e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnAccountManage_Click(object sender, EventArgs e)
+        {
+            FrmAccountManager frmAccountManager = new FrmAccountManager
+            {
+                UserName = this.UserName
+            };
+            DialogResult dialogResult = frmAccountManager.ShowDialog(this);
+            if (DialogResult.No == dialogResult)
+            {
+                if (LoginState.Login == this.LoginState)
+                {
+                    TableUsersManage.ModifyUserLogoutById(DateTime.Now.ToLocalTime().ToString(), this.LoginLogId);
+                    SetLoginState(LoginState.Logout);
+                }
+            }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (LoginState.Login == this.LoginState)
+                {
+                    DialogResult dialogResult = MessageBox.Show(this, "您确定要退出当前账户 " + this.User.Name + " ?", this.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (DialogResult.OK == dialogResult)
+                    {
+                        TableUsersManage.ModifyUserLogoutById(DateTime.Now.ToLocalTime().ToString(), this.LoginLogId);
+                        SetLoginState(LoginState.Logout);
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else if (LoginState.Logout == this.LoginState)
+                {
+                    Login();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnAddCustomer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddCustomer();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnFirstPage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadCustomerInPage(1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnPrePage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadCustomerInPage(--this.PageNumber);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnNextPage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadCustomerInPage(++this.PageNumber);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnLastPage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadCustomerInPage(this.TotalPageNumber);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ComboBoxSeller_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.UserName = ComboBoxSeller.Text;
+                RefreshCustomer();
             }
             catch (Exception ex)
             {
@@ -347,16 +529,7 @@ namespace CFUSystem
         {
             try
             {
-                FrmCustomerInfo frmCustomerInfo = new FrmCustomerInfo
-                {
-                    WorkingState = WorkingState.Add,
-                    Seller = this.UserName
-                };
-                DialogResult dialogResult = frmCustomerInfo.ShowDialog(this);
-                if (DialogResult.OK == dialogResult)
-                {
-                    LoadAllCustomer(this.UserName);
-                }
+                AddCustomer();
             }
             catch (Exception ex)
             {
@@ -397,7 +570,7 @@ namespace CFUSystem
                         }
                     }
 
-                    LoadAllCustomer(this.UserName);
+                    LoadCustomerInPage(this.PageNumber);
                 }
                 else if (DialogResult.No == dialogResult)
                 {
@@ -412,7 +585,21 @@ namespace CFUSystem
 
         private void TsmiRefresh_Click(object sender, EventArgs e)
         {
-            LoadAllCustomer(this.UserName);
+            LoadCustomerInPage(this.PageNumber);
+        }
+
+        private void AddCustomer()
+        {
+            FrmCustomerInfo frmCustomerInfo = new FrmCustomerInfo
+            {
+                WorkingState = WorkingState.Add,
+                Seller = this.UserName
+            };
+            DialogResult dialogResult = frmCustomerInfo.ShowDialog(this);
+            if (DialogResult.OK == dialogResult)
+            {
+                LoadCustomerInPage(this.PageNumber);
+            }
         }
 
         private void EditDataGridViewRow(DataGridViewRow row)
@@ -429,57 +616,7 @@ namespace CFUSystem
             DialogResult dialogResult = frmCustomerInfo.ShowDialog(this);
             if (DialogResult.OK == dialogResult)
             {
-                LoadAllCustomer(this.UserName);
-            }
-        }
-
-        private void LblUserName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnAccountManage_Click(object sender, EventArgs e)
-        {
-            FrmAccountManager frmAccountManager = new FrmAccountManager
-            {
-                UserName = this.UserName
-            };
-            DialogResult dialogResult = frmAccountManager.ShowDialog(this);
-            if(DialogResult.No == dialogResult)
-            {
-                if (LoginState.Login == this.LoginState)
-                {
-                    TableUsersManage.ModifyUserLogoutById(DateTime.Now.ToLocalTime().ToString(), this.LoginLogId);
-                    SetLoginState(LoginState.Logout);
-                }
-            }
-        }
-
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (LoginState.Login == this.LoginState)
-                {
-                    DialogResult dialogResult = MessageBox.Show(this, "您确定要退出当前账户 " + this.UserName + " ?", this.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                    if (DialogResult.OK == dialogResult)
-                    {
-                        TableUsersManage.ModifyUserLogoutById(DateTime.Now.ToLocalTime().ToString(), this.LoginLogId);
-                        SetLoginState(LoginState.Logout);
-                    }
-                    else
-                    {
-
-                    }
-                }
-                else if (LoginState.Logout == this.LoginState)
-                {
-                    Login();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoadCustomerInPage(this.PageNumber);
             }
         }
 
@@ -489,22 +626,29 @@ namespace CFUSystem
             if (LoginState.Login == state)
             {
                 label1.Visible = true;
-                LblUserName.Text = this.UserName;
+                LblUserName.Text = this.User.Name;
                 this.BtnAccountManage.Visible = true;
                 this.BtnExit.Text = "退出";
+                //this.ComboBoxSeller.Enabled = true;
+                this.tableLayoutPanel3.Enabled = true;
             }
             else
             {
                 this.UserName = "";
                 label1.Visible = false;
                 LblUserName.Text = "";
+                this.ComboBoxSeller.Visible = false;
                 this.BtnAccountManage.Visible = false;
                 this.BtnExit.Text = "登录";
+                //this.ComboBoxSeller.Enabled = false;
+                this.tableLayoutPanel3.Enabled = false;
 
                 DataTable dt = (DataTable)this.DataGridViewCustomerInfo.DataSource;
                 dt.Rows.Clear();
                 this.DataGridViewCustomerInfo.DataSource = dt;
             }
+
+
         }
 
         private void Login()
@@ -520,10 +664,58 @@ namespace CFUSystem
             this.User = frmLogin.User;
             this.UserName = frmLogin.UserName;
             this.LoginLogId = frmLogin.LoginLogId;
+            this.ComboBoxSeller.Text = this.UserName;
+
+            if (PrivilegeLevel.Administrative == this.User.Privilege)
+            {
+                this.ComboBoxSeller.Visible = true;
+            }
+            else
+            {
+                this.ComboBoxSeller.Visible = false;
+            }
 
             SetLoginState(LoginState.Login);
 
-            LoadAllCustomer(this.UserName);
+            RefreshCustomer();
+        }
+
+        private void LoadAllUsers()
+        {
+            this.Users.Clear();
+            this.ComboBoxSeller.Items.Clear();
+
+            this.ComboBoxSeller.Items.Add(AllUsers);
+
+            DataTable dataTable = TableUsersManage.QueryAllUsers();
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                var item = dataRow.ToExpression<UserInfo>();
+                UserInfo user = item(dataRow);
+                this.Users.Add(user);
+
+                this.ComboBoxSeller.Items.Add(user.Name);
+            }
+
+            this.ComboBoxSeller.Text = AllUsers;
+            this.UserName = AllUsers;
+
+            RefreshCustomer();
+        }
+
+        private void RefreshCustomer()
+        {
+            if (this.UserName.Equals(AllUsers))
+            {
+                this.TotalNumber = TableCustomerManage.QueryAllCustomerNumber();
+            }
+            else
+            {
+                this.TotalNumber = TableCustomerManage.QueryCustomerNumberByUserName(this.User.Name);
+            }
+            this.TotalPageNumber = this.TotalNumber % PageSize == 0 ? this.TotalNumber / PageSize : this.TotalNumber / PageSize + 1;
+
+            LoadCustomerInPage(1);
         }
     }
 }

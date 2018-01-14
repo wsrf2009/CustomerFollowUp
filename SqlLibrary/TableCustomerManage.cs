@@ -11,38 +11,11 @@ namespace SqlLibrary
     public class TableCustomerManage
     {
         #region 客户信息
-        public static int AddCustomerReturnIdentity(string archivingDate, string sort,
-            string contacts, string email,
-            string company, string website,
-            string country, string address,
-            string scope, string type, string demand,
-            string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
-            string comefrom, string belongsto,
-            string remarks,
-            string modify,
-            string FUTime, string FUBriefing, string FULog)
+        public static int AddCustomerReturnIdentity(string archivingDate, string email, string belongsTo)
         {
             string sqlCmd = "insert into TB_CustomerInfo (" +
-                "ArchivingTime, Sort, " +
-                "Contacts, Email, " +
-                "CompanyName, Website, " +
-                "Country, Address, " +
-                "BusinessScope, Type, Demand, " +
-                "Telephone, FAX, Mobile, MSN, Skype, Linkin, Whatsapp, Twiter, Facebook, " +
-                "ComeFrom, BelongsTo, " +
-                "Remarks, " +
-                "Modify, " +
-                "LastFollowUpTime, LastFollowUpBriefing, LastFollowUpState) values ('" +
-                archivingDate + "','" + sort + "','" +
-                contacts + "','" + email + "','" +
-                company + "','" + website + "','" +
-                country + "','" + address + "','" +
-                scope + "','" + type + "','" + demand + "','" +
-                telephone + "','" + fax + "','" + mobile + "','" + msn + "','" + skype + "','" + linkin + "','" + whatsapp + "','" + twiter + "','" + facebook + "','" +
-                comefrom + "','" + belongsto + "','" +
-                remarks + "','" +
-                modify + "','" + 
-                FUTime + "','" + FUBriefing + "','" + FULog + "'); select @@Identity";
+                "ArchivingTime, Email, BelongsTo) values ('" +
+                archivingDate + "', '" + email + "','" + belongsTo + "'); select @@Identity";
             object obj = DatabaseHelper.ExecuteScalar(sqlCmd);
             return Convert.ToInt32(obj);
         }
@@ -51,6 +24,22 @@ namespace SqlLibrary
         {
             string sqlCmd = "delete from TB_CustomerInfo where Id = '" + id + "'";
             return DatabaseHelper.ExecuteNonQuery(sqlCmd);
+        }
+
+        public static int QueryAllCustomerNumber()
+        {
+            string sqlCmd = "select count (*) from TB_CustomerInfo";
+            object obj = DatabaseHelper.ExecuteScalar(sqlCmd);
+            return Convert.ToInt32(obj);
+        }
+
+        public static DataTable QueryCustomerByPage(int page, int pageSize)
+        {
+            if (page < 1) page = 1;
+            int pages = pageSize * (page - 1);
+
+            string sqlCmd = "select top " + pageSize + " * from TB_CustomerInfo where Id not in (select top " + pages + " Id from TB_CustomerInfo order by LastFollowUpTime desc) order by LastFollowUpTime desc";
+            return DatabaseHelper.ExecuteSqlCommand(sqlCmd);
         }
 
         public static DataSet QueryCustomerInfoBySeller(string userName)
@@ -72,6 +61,22 @@ namespace SqlLibrary
             return dataSet;
         }
 
+        public static int QueryCustomerNumberByUserName(string userName)
+        {
+            string sqlCmd = "select count (*) from TB_CustomerInfo where BelongsTo = '" + userName + "'";
+            object obj = DatabaseHelper.ExecuteScalar(sqlCmd);
+            return Convert.ToInt32(obj);
+        }
+
+        public static DataTable QueryCustomerByUserNameAndPage(string userName, int page, int pageSize)
+        {
+            if (page < 1) page = 1;
+            int pages = pageSize * (page - 1);
+
+            string sqlCmd = "select top " + pageSize + " * from TB_CustomerInfo where Id not in (select top " + pages + " Id from TB_CustomerInfo where BelongsTo = '" + userName + "' order by LastFollowUpTime desc) and BelongsTo = '" + userName + "' order by LastFollowUpTime desc";
+            return DatabaseHelper.ExecuteSqlCommand(sqlCmd);
+        }
+
         public static int ModifyCustomerInfoById(int id,
             string sort,
             string contacts, string email,
@@ -80,6 +85,9 @@ namespace SqlLibrary
             string scope, string type, string demand,
             string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
             string comefrom,
+            string usedBrands, string decisionMaker, string reactionAcuity, string religion, string charaterTraits,
+            string amountStratification, string normalCommunication, string normalPayment, string customerSize,
+            string deliveryTimeSensitivity, string loyalty, string productFactors,
             string remarks,
             string  modify)
         {
@@ -91,6 +99,14 @@ namespace SqlLibrary
                 "BusinessScope = '" + scope + "', Type = '" + type + "', Demand = '" + demand + "', " +
                 "Telephone = '" + telephone + "', FAX = '" + fax + "', Mobile = '" + mobile + "', MSN = '" + msn + "', Skype = '" + skype + "', Linkin = '" + linkin + "', Whatsapp = '" + whatsapp + "', Twiter = '" + twiter + "', Facebook = '" + facebook + "', " +
                 "ComeFrom = '" + comefrom + "', " +
+                "UsedBrands = '" + usedBrands + "', DecisionMaker = '" + decisionMaker +"', " +
+                "NewProductRecommendReactionAcuity = '" + reactionAcuity + "', " +
+                "Religion = '" + religion + "', CharacterTraits = '" + charaterTraits + "', " +
+                "AmountStratification = '" + amountStratification + "', " +
+                "NormalCommunication = '" + normalCommunication + "', " +
+                "NormalPayment = '" + normalPayment + "', CustomerSize = '" + customerSize + "', " +
+                "DeliveryTimeSensitivity = '" + deliveryTimeSensitivity + "', Loyalty = '" + loyalty + "', " +
+                "ProductFactors = '" + productFactors + "', " +
                 "Remarks = '" + remarks + "', " +
                 "Modify = '" + modify + "' where id = '" + id + "'";
 

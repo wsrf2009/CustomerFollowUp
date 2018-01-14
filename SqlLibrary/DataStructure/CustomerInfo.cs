@@ -36,5 +36,17 @@ namespace SqlLibrary.DataStructure
         public string LastFollowUpTime { get; set; }
         public string LastFollowUpBriefing { get; set; }
         public string LastFollowUpState { get; set; }
+        public string CustomerSize { get; set; }
+        public string AmountStratification { get; set; }
+        public string UsedBrands { get; set; }
+        public string Religion { get; set; }
+        public string CharacterTraits { get; set; }
+        public string NormalCommunication { get; set; }
+        public string NormalPayment { get; set; }
+        public string DeliveryTimeSensitivity { get; set; }
+        public string NewProductRecommendReactionAcuity { get; set; }
+        public string ProductFactors { get; set; }
+        public string DecisionMaker { get; set; }
+        public string Loyalty { get; set; }
     }
 }

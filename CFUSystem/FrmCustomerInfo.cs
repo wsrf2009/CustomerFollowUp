@@ -44,7 +44,7 @@ namespace CFUSystem
                 {
                     tabControl1.TabPages.Remove(tabPage2);
 
-                    TxtBoxBelongsTo.Text = this.Seller;
+                    //TxtBoxLoyalty.Text = this.Seller;
 
                     SetCustomerInfoWorkingState(WorkingState.Add);
                 }
@@ -71,7 +71,18 @@ namespace CFUSystem
                     TxtBoxTwiter.Text = this.Customer.Twiter;
                     TxtBoxFacebook.Text = this.Customer.Facebook;
                     TxtBoxComeFrom.Text = this.Customer.ComeFrom;
-                    TxtBoxBelongsTo.Text = this.Customer.BelongsTo;
+                    TxtBoxUsedBrands.Text = this.Customer.UsedBrands;
+                    TxtBoxDecisionMaker.Text = this.Customer.DecisionMaker;
+                    TxtBoxNewProductRecommendReactionAcuity.Text = this.Customer.NewProductRecommendReactionAcuity;
+                    TxtBoxReligion.Text = this.Customer.Religion;
+                    TxtBoxCharacterTraits.Text = this.Customer.CharacterTraits;
+                    TxtBoxAmountStratification.Text = this.Customer.AmountStratification;
+                    TxtBoxNormalCommunication.Text = this.Customer.NormalCommunication;
+                    TxtBoxNormalPayment.Text = this.Customer.NormalPayment;
+                    TxtBoxCustomerSize.Text = this.Customer.CustomerSize;
+                    TxtBoxDeliveryTimeSensitivity.Text = this.Customer.DeliveryTimeSensitivity;
+                    TxtBoxLoyalty.Text = this.Customer.Loyalty;
+                    TxtBoxProductFactors.Text = this.Customer.ProductFactors;
                     TxtBoxRemarks.Text = this.Customer.Remarks;
 
                     LoadAllLogs(this.Customer.Id);
@@ -681,19 +692,19 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxBelongsTo_TextChanged(object sender, EventArgs e)
+        private void TxtBoxRemarks_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxBelongsTo.Text;
+                string cur = TxtBoxRemarks.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxBelongsTo.Focus();
+                    TxtBoxRemarks.Focus();
                 }
                 else if (WorkingState.Modify == this.WorkingState)
                 {
-                    if (this.Customer.BelongsTo.Equals(cur))
+                    if (this.Customer.Remarks.Equals(cur))
                     {
                         BtnInfoSave.Enabled = false;
                     }
@@ -709,19 +720,383 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxRemarks_TextChanged(object sender, EventArgs e)
+        private void TxtBoxCustomerSize_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxRemarks.Text;
+                string cur = TxtBoxCustomerSize.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxRemarks.Focus();
+                    TxtBoxCustomerSize.Focus();
                 }
                 else if (WorkingState.Modify == this.WorkingState)
                 {
-                    if (this.Customer.Remarks.Equals(cur))
+                    if (this.Customer.CustomerSize.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxAmountStratification_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxAmountStratification.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxAmountStratification.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.AmountStratification.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxUsedBrands_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxUsedBrands.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxUsedBrands.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.UsedBrands.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxReligion_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxReligion.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxReligion.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.Religion.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxCharacterTraits_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxCharacterTraits.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxCharacterTraits.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.CharacterTraits.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxNormalCommunication_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxNormalCommunication.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxNormalCommunication.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.NormalCommunication.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxNormalPayment_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxNormalPayment.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxNormalPayment.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.NormalPayment.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxDeliveryTimeSensitivity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxDeliveryTimeSensitivity.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxDeliveryTimeSensitivity.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.DeliveryTimeSensitivity.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxNewProductRecommendReactionAcuity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxNewProductRecommendReactionAcuity.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxNewProductRecommendReactionAcuity.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.NewProductRecommendReactionAcuity.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxProductFactors_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxProductFactors.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxProductFactors.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.ProductFactors.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxDecisionMaker_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxDecisionMaker.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxDecisionMaker.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.DecisionMaker.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxLoyalty_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxLoyalty.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxLoyalty.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.Loyalty.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxCustomerSize_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxCustomerSize.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxCustomerSize.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.CustomerSize.Equals(cur))
+                    {
+                        BtnInfoSave.Enabled = false;
+                    }
+                    else
+                    {
+                        BtnInfoSave.Enabled = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtBoxAmountStratification_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string cur = TxtBoxAmountStratification.Text;
+                if (cur.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxAmountStratification.Focus();
+                }
+                else if (WorkingState.Modify == this.WorkingState)
+                {
+                    if (this.Customer.AmountStratification.Equals(cur))
                     {
                         BtnInfoSave.Enabled = false;
                     }
@@ -764,7 +1139,19 @@ namespace CFUSystem
                 string twiter = this.Customer.Twiter = TxtBoxTwiter.Text.Trim();
                 string facebook = this.Customer.Facebook = TxtBoxFacebook.Text.Trim();
                 string comefrom = this.Customer.ComeFrom = TxtBoxComeFrom.Text.Trim();
-                string belongsto = this.Customer.BelongsTo = TxtBoxBelongsTo.Text.Trim();
+                string usedBrands = this.Customer.UsedBrands = TxtBoxUsedBrands.Text.Trim();
+                string decisionMaker = this.Customer.DecisionMaker = TxtBoxDecisionMaker.Text.Trim();
+                string reactionAcuity = this.Customer.NewProductRecommendReactionAcuity = TxtBoxNewProductRecommendReactionAcuity.Text.Trim();
+                string religion = this.Customer.Religion = TxtBoxReligion.Text.Trim();
+                string charaterTraits = this.Customer.CharacterTraits = TxtBoxCharacterTraits.Text.Trim();
+                string amountStratification = this.Customer.AmountStratification = TxtBoxAmountStratification.Text.Trim();
+                string normalCommunication = this.Customer.NormalCommunication = TxtBoxNormalCommunication.Text.Trim();
+                string normalPayment = this.Customer.NormalPayment = TxtBoxNormalPayment.Text.Trim();
+                string customerSize = this.Customer.CustomerSize = TxtBoxCustomerSize.Text.Trim();
+                string deliveryTimeSensitivity = this.Customer.DeliveryTimeSensitivity = TxtBoxDeliveryTimeSensitivity.Text.Trim();
+                string loyalty = this.Customer.Loyalty = TxtBoxLoyalty.Text.Trim();
+                string productFactors = this.Customer.ProductFactors = TxtBoxProductFactors.Text.Trim();
+                string belongsto = this.Customer.BelongsTo = TxtBoxLoyalty.Text.Trim();
                 string remarks = this.Customer.Remarks = TxtBoxRemarks.Text.Trim();
                 string modify = this.Customer.Modify = DateTime.Now.ToLocalTime().ToString();
                 string futime = this.Customer.LastFollowUpTime = "";
@@ -773,20 +1160,24 @@ namespace CFUSystem
 
                 if (WorkingState.Add == this.WorkingState)
                 {
-                    int identity = TableCustomerManage.AddCustomerReturnIdentity(archivingDate, sort,
+                    int identity = TableCustomerManage.AddCustomerReturnIdentity(archivingDate, email, this.Seller);
+                    if (identity > 0)
+                    {
+                        this.DialogResult = DialogResult.OK;
+                        this.Customer.Id = identity;
+
+                        int num = TableCustomerManage.ModifyCustomerInfoById(this.Customer.Id,
+                        sort,
                         contacts, email,
                         company, website,
                         country, address,
                         scope, type, demand,
                         telephone, fax, mobile, msn, skype, linkin, whatsapp, twiter, facebook,
-                        comefrom, belongsto,
-                        remarks,
-                        modify,
-                        futime, fubriefing, fustate);
-                    if (identity > 0)
-                    {
-                        this.DialogResult = DialogResult.OK;
-                        this.Customer.Id = identity;
+                        comefrom,
+                        usedBrands, decisionMaker, reactionAcuity, religion, charaterTraits, amountStratification,
+                        normalCommunication, normalPayment, customerSize, deliveryTimeSensitivity, loyalty, productFactors,
+                        remarks, modify);
+
                         SetCustomerInfoWorkingState(WorkingState.Modify);
 
                         DialogResult result = MessageBox.Show(this, "添加客户信息成功！您想要 【是】 继续添加客户跟进日志，【否】 关闭客户信息界面，【取消】 什么也不做", this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
@@ -820,6 +1211,8 @@ namespace CFUSystem
                         scope, type, demand,
                         telephone, fax, mobile, msn, skype, linkin, whatsapp, twiter, facebook,
                         comefrom,
+                        usedBrands, decisionMaker, reactionAcuity, religion, charaterTraits, amountStratification,
+                        normalCommunication, normalPayment, customerSize, deliveryTimeSensitivity, loyalty, productFactors,
                         remarks, modify);
                     if (num > 0)
                     {
@@ -972,7 +1365,7 @@ namespace CFUSystem
                 if (DialogResult.OK == result)
                 {
                     LoadAllLogs(this.Customer.Id);
-                    this.DialogResult = DialogResult.OK;
+                    //this.DialogResult = DialogResult.OK;
                 }
             }
             catch (Exception ex)
@@ -1002,7 +1395,7 @@ namespace CFUSystem
                         if(DialogResult.OK == result)
                         {
                             LoadAllLogs(this.Customer.Id);
-                            this.DialogResult = DialogResult.OK;
+                            //this.DialogResult = DialogResult.OK;
                         }
                     }
                 }
@@ -1036,7 +1429,7 @@ namespace CFUSystem
 
                     LoadAllLogs(this.Customer.Id);
 
-                    this.DialogResult = DialogResult.OK;
+                    //this.DialogResult = DialogResult.OK;
                 }
                 else if (DialogResult.No == dialogResult)
                 {

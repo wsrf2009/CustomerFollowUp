@@ -26,20 +26,8 @@ namespace SqlLibrary
 
         public static DataTable QueryAllUsers()
         {
-            SqlConnection sqlConnection = DatabaseHelper.CreateDatabaseHandler();
-            sqlConnection.Open();
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();         //创建SQL命令执行对象
-            string s1 = "select * from TB_Users";                                            //编写SQL命令
-            sqlCommand.CommandText = s1;                           //执行SQL命令
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
-            {
-                SelectCommand = sqlCommand                       //让适配器执行SELECT命令
-            };       //实例化数据适配器
-            sqlConnection.Close();
-            DataTable dataTable = new DataTable();                     //实例化结果数据集
-            int n = sqlDataAdapter.Fill(dataTable);              //将结果放入数据适配器，返回元祖个数
-
-            return dataTable;
+            string sqlCmd = "select * from TB_Users";                                            //编写SQL命令
+            return DatabaseHelper.ExecuteSqlCommand(sqlCmd);
         }
         public static DataTable QueryUserName(string userName)
         {

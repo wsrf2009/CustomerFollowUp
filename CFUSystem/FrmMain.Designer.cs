@@ -40,10 +40,18 @@ namespace CFUSystem
             this.BtnExit = new System.Windows.Forms.Button();
             this.DataGridViewCustomerInfo = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnLastPage = new System.Windows.Forms.Button();
+            this.BtnNextPage = new System.Windows.Forms.Button();
+            this.BtnPrePage = new System.Windows.Forms.Button();
+            this.BtnFirstPage = new System.Windows.Forms.Button();
+            this.BtnAddCustomer = new System.Windows.Forms.Button();
+            this.LblCurPage = new System.Windows.Forms.Label();
+            this.ComboBoxSeller = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomerInfo)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -53,31 +61,34 @@ namespace CFUSystem
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.DataGridViewCustomerInfo, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1245, 629);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 7;
+            this.tableLayoutPanel2.ColumnCount = 9;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.LblUserName, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.BtnAccountManage, 3, 1);
-            this.tableLayoutPanel2.Controls.Add(this.BtnExit, 5, 1);
+            this.tableLayoutPanel2.Controls.Add(this.BtnAccountManage, 5, 1);
+            this.tableLayoutPanel2.Controls.Add(this.BtnExit, 7, 1);
+            this.tableLayoutPanel2.Controls.Add(this.ComboBoxSeller, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 1);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -154,7 +165,7 @@ namespace CFUSystem
             this.DataGridViewCustomerInfo.ReadOnly = true;
             this.DataGridViewCustomerInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.DataGridViewCustomerInfo.RowTemplate.Height = 30;
-            this.DataGridViewCustomerInfo.Size = new System.Drawing.Size(1233, 530);
+            this.DataGridViewCustomerInfo.Size = new System.Drawing.Size(1233, 485);
             this.DataGridViewCustomerInfo.TabIndex = 2;
             this.DataGridViewCustomerInfo.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewCustomerInfo_CellMouseClick);
             this.DataGridViewCustomerInfo.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewCustomerInfo_CellMouseDoubleClick);
@@ -171,17 +182,123 @@ namespace CFUSystem
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // statusStrip1
+            // tableLayoutPanel3
             // 
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.statusStrip1.GripMargin = new System.Windows.Forms.Padding(0);
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(4, 606);
-            this.statusStrip1.Margin = new System.Windows.Forms.Padding(3);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1237, 19);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
+            this.tableLayoutPanel3.ColumnCount = 14;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.Controls.Add(this.BtnLastPage, 12, 1);
+            this.tableLayoutPanel3.Controls.Add(this.BtnNextPage, 10, 1);
+            this.tableLayoutPanel3.Controls.Add(this.BtnPrePage, 6, 1);
+            this.tableLayoutPanel3.Controls.Add(this.BtnFirstPage, 4, 1);
+            this.tableLayoutPanel3.Controls.Add(this.BtnAddCustomer, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.LblCurPage, 8, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 558);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1243, 70);
+            this.tableLayoutPanel3.TabIndex = 4;
+            // 
+            // BtnLastPage
+            // 
+            this.BtnLastPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnLastPage.Location = new System.Drawing.Point(1083, 10);
+            this.BtnLastPage.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnLastPage.Name = "BtnLastPage";
+            this.BtnLastPage.Size = new System.Drawing.Size(150, 50);
+            this.BtnLastPage.TabIndex = 0;
+            this.BtnLastPage.Text = "最后一页";
+            this.BtnLastPage.UseVisualStyleBackColor = true;
+            this.BtnLastPage.Click += new System.EventHandler(this.BtnLastPage_Click);
+            // 
+            // BtnNextPage
+            // 
+            this.BtnNextPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnNextPage.Location = new System.Drawing.Point(913, 10);
+            this.BtnNextPage.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnNextPage.Name = "BtnNextPage";
+            this.BtnNextPage.Size = new System.Drawing.Size(150, 50);
+            this.BtnNextPage.TabIndex = 1;
+            this.BtnNextPage.Text = "下一页";
+            this.BtnNextPage.UseVisualStyleBackColor = true;
+            this.BtnNextPage.Click += new System.EventHandler(this.BtnNextPage_Click);
+            // 
+            // BtnPrePage
+            // 
+            this.BtnPrePage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnPrePage.Location = new System.Drawing.Point(573, 10);
+            this.BtnPrePage.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnPrePage.Name = "BtnPrePage";
+            this.BtnPrePage.Size = new System.Drawing.Size(150, 50);
+            this.BtnPrePage.TabIndex = 2;
+            this.BtnPrePage.Text = "上一页";
+            this.BtnPrePage.UseVisualStyleBackColor = true;
+            this.BtnPrePage.Click += new System.EventHandler(this.BtnPrePage_Click);
+            // 
+            // BtnFirstPage
+            // 
+            this.BtnFirstPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnFirstPage.Location = new System.Drawing.Point(403, 10);
+            this.BtnFirstPage.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnFirstPage.Name = "BtnFirstPage";
+            this.BtnFirstPage.Size = new System.Drawing.Size(150, 50);
+            this.BtnFirstPage.TabIndex = 3;
+            this.BtnFirstPage.Text = "第一页";
+            this.BtnFirstPage.UseVisualStyleBackColor = true;
+            this.BtnFirstPage.Click += new System.EventHandler(this.BtnFirstPage_Click);
+            // 
+            // BtnAddCustomer
+            // 
+            this.BtnAddCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnAddCustomer.Location = new System.Drawing.Point(10, 10);
+            this.BtnAddCustomer.Margin = new System.Windows.Forms.Padding(0);
+            this.BtnAddCustomer.Name = "BtnAddCustomer";
+            this.BtnAddCustomer.Size = new System.Drawing.Size(150, 50);
+            this.BtnAddCustomer.TabIndex = 4;
+            this.BtnAddCustomer.Text = "添加客户";
+            this.BtnAddCustomer.UseVisualStyleBackColor = true;
+            this.BtnAddCustomer.Click += new System.EventHandler(this.BtnAddCustomer_Click);
+            // 
+            // LblCurPage
+            // 
+            this.LblCurPage.AutoSize = true;
+            this.LblCurPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LblCurPage.Location = new System.Drawing.Point(748, 15);
+            this.LblCurPage.Margin = new System.Windows.Forms.Padding(5);
+            this.LblCurPage.Name = "LblCurPage";
+            this.LblCurPage.Size = new System.Drawing.Size(140, 40);
+            this.LblCurPage.TabIndex = 5;
+            this.LblCurPage.Text = "label2";
+            this.LblCurPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ComboBoxSeller
+            // 
+            this.ComboBoxSeller.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ComboBoxSeller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxSeller.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ComboBoxSeller.FormattingEnabled = true;
+            this.ComboBoxSeller.Location = new System.Drawing.Point(776, 12);
+            this.ComboBoxSeller.Name = "ComboBoxSeller";
+            this.ComboBoxSeller.Size = new System.Drawing.Size(144, 30);
+            this.ComboBoxSeller.TabIndex = 5;
+            this.ComboBoxSeller.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSeller_SelectedIndexChanged);
             // 
             // FrmMain
             // 
@@ -194,17 +311,17 @@ namespace CFUSystem
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomerInfo)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label LblUserName;
         private System.Windows.Forms.DataGridView DataGridViewCustomerInfo;
@@ -212,5 +329,13 @@ namespace CFUSystem
         private TableLayoutPanel tableLayoutPanel2;
         private Button BtnAccountManage;
         private Button BtnExit;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Button BtnLastPage;
+        private Button BtnNextPage;
+        private Button BtnPrePage;
+        private Button BtnFirstPage;
+        private Button BtnAddCustomer;
+        private Label LblCurPage;
+        private ComboBox ComboBoxSeller;
     }
 }

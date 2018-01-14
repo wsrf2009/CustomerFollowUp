@@ -217,16 +217,6 @@ namespace CFUSystem
                     {
                         this.DialogResult = DialogResult.OK;
                         this.Close();
-                        //this.FollowUpLog.Id = identity;
-
-                        //MessageBox.Show(this, "新增跟进日志成功！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        //LoadAllLogs(this.Customer.Id);
-
-                        //this.FollowUpWorkingState = WorkingState.Modify;
-                        //BtnLogSave.Text = "更新";
-                        //BtnLogSave.Enabled = false;
-                        //BtnLogSave.Visible = true;
                     }
                 }
                 else if (WorkingState.Modify == this.FollowUpWorkingState)
@@ -240,10 +230,6 @@ namespace CFUSystem
                     {
                         this.DialogResult = DialogResult.OK;
                         this.Close();
-                        //MessageBox.Show(this, "更新跟进日志成功！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //LoadAllLogs(this.Customer.Id);
-
-                        //BtnLogSave.Enabled = false;
                     }
                 }
             }

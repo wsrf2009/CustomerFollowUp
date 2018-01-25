@@ -14,7 +14,7 @@ namespace SqlLibrary.DataStructure
         public string Password { get; set; }
         public Image Portrait { get; set; }
         public string Privilege { get; set; }
-        public string NickName { get; set; }
+        public string Nickname { get; set; }
         public string RegisTime { get; set; }
         public string LastLogin { get; set; }
         public string LastLoginLanIp { get; set; }

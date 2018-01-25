@@ -32,12 +32,14 @@ namespace CFUSystem
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.LblUserName = new System.Windows.Forms.Label();
             this.BtnAccountManage = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
+            this.ComboBoxSeller = new System.Windows.Forms.ComboBox();
             this.DataGridViewCustomerInfo = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -47,7 +49,6 @@ namespace CFUSystem
             this.BtnFirstPage = new System.Windows.Forms.Button();
             this.BtnAddCustomer = new System.Windows.Forms.Button();
             this.LblCurPage = new System.Windows.Forms.Label();
-            this.ComboBoxSeller = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCustomerInfo)).BeginInit();
@@ -76,9 +77,9 @@ namespace CFUSystem
             // 
             this.tableLayoutPanel2.ColumnCount = 9;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -112,6 +113,7 @@ namespace CFUSystem
             this.label1.Size = new System.Drawing.Size(69, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "你好，";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // LblUserName
             // 
@@ -125,6 +127,7 @@ namespace CFUSystem
             this.LblUserName.Size = new System.Drawing.Size(75, 24);
             this.LblUserName.TabIndex = 1;
             this.LblUserName.Text = "label2";
+            this.LblUserName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // BtnAccountManage
             // 
@@ -149,6 +152,18 @@ namespace CFUSystem
             this.BtnExit.Text = "退出";
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
+            // ComboBoxSeller
+            // 
+            this.ComboBoxSeller.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ComboBoxSeller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxSeller.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ComboBoxSeller.FormattingEnabled = true;
+            this.ComboBoxSeller.Location = new System.Drawing.Point(626, 12);
+            this.ComboBoxSeller.Name = "ComboBoxSeller";
+            this.ComboBoxSeller.Size = new System.Drawing.Size(294, 30);
+            this.ComboBoxSeller.TabIndex = 5;
+            this.ComboBoxSeller.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSeller_SelectedIndexChanged);
             // 
             // DataGridViewCustomerInfo
             // 
@@ -288,24 +303,13 @@ namespace CFUSystem
             this.LblCurPage.Text = "label2";
             this.LblCurPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ComboBoxSeller
-            // 
-            this.ComboBoxSeller.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ComboBoxSeller.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBoxSeller.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ComboBoxSeller.FormattingEnabled = true;
-            this.ComboBoxSeller.Location = new System.Drawing.Point(776, 12);
-            this.ComboBoxSeller.Name = "ComboBoxSeller";
-            this.ComboBoxSeller.Size = new System.Drawing.Size(144, 30);
-            this.ComboBoxSeller.TabIndex = 5;
-            this.ComboBoxSeller.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSeller_SelectedIndexChanged);
-            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1245, 629);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.Text = "客户跟进系统";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);

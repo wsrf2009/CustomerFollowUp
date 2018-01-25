@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SqlLibrary.DataStructure;
+using SqlLibrary;
 
 namespace CFUSystem
 {
@@ -28,6 +29,7 @@ namespace CFUSystem
                 {
                     TxtBoxUserName.Text = this.User.Name;
                     TxtBoxPassword.Text = this.User.Password;
+                    TxtBoxNickName.Text = this.User.Nickname;
                     TxtBoxLastLoginTime.Text = this.User.LastLogin;
                     TxtBoxLastLoginIp.Text = this.User.LastLoginLanIp;
                     TxtBoxLastLoginMac.Text = this.User.LastLoginMac;
@@ -60,6 +62,32 @@ namespace CFUSystem
             catch (Exception ex)
             {
                 MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LblModifyNickname_Click(object sender, EventArgs e)
+        {
+            if (LblModifyNickname.Text.Equals("修改"))
+            {
+                TxtBoxNickName.Enabled = true;
+                LblModifyNickname.Text = "确定";
+            }
+            else if (LblModifyNickname.Text.Equals("确定"))
+            {
+                string nickname = TxtBoxNickName.Text.Trim();
+                if (nickname.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxNickName.Focus();
+                    return;
+                }
+                else
+                {
+                    TxtBoxNickName.Enabled = false;
+                    LblModifyNickname.Text = "修改";
+
+                    TableUsersManage.ModifyNicknameByUserId(this.User.Id, nickname);
+                }
             }
         }
     }

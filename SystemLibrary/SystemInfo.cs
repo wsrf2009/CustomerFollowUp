@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Net.Sockets;
+using System.Reflection;
 
 namespace SystemLibrary
 {
@@ -114,5 +115,10 @@ namespace SystemLibrary
         {
             return Environment.UserName;
         }
+
+        //public static string GetAppVersion()
+        //{
+        //    return Application.ProductVersion;
+        //}
     }
 }

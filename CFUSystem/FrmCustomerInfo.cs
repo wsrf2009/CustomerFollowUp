@@ -26,7 +26,7 @@ namespace CFUSystem
             }
             set { _Customer = value; }
         }
-        public string Seller { get; set; }
+        public UserInfo User { get; set; }
 
         public FrmCustomerInfo()
         {
@@ -38,15 +38,13 @@ namespace CFUSystem
             try
             {
                 ComboBoxSort.SelectedIndex = 0;
-                //ComboBoxState.SelectedIndex = 0;
 
                 if (WorkingState.Add == this.WorkingState)
                 {
                     tabControl1.TabPages.Remove(tabPage2);
-
-                    //TxtBoxLoyalty.Text = this.Seller;
-
                     SetCustomerInfoWorkingState(WorkingState.Add);
+
+                    BtnInfoSave.Enabled = false;
                 }
                 else if (WorkingState.Modify == this.WorkingState)
                 {
@@ -64,7 +62,7 @@ namespace CFUSystem
                     TxtBoxTelephone.Text = this.Customer.Telephone;
                     TxtBoxFax.Text = this.Customer.FAX;
                     TxtBoxMobile.Text = this.Customer.Mobile;
-                    TxtBoxMSN.Text = this.Customer.MSN;
+                    TxtBoxWechat.Text = this.Customer.Wechat;
                     TxtBoxSkype.Text = this.Customer.Skype;
                     TxtBoxLinkin.Text = this.Customer.Linkin;
                     TxtBoxWhatsApp.Text = this.Customer.Whatsapp;
@@ -111,18 +109,18 @@ namespace CFUSystem
         {
             try
             {
-                string cur = DTPArchiving.Value.ToLocalTime().ToString();
-                if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.ArchivingTime.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //string cur = DTPArchiving.Value.ToLocalTime().ToString();
+                //if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.ArchivingTime.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -134,18 +132,18 @@ namespace CFUSystem
         {
             try
             {
-                string cur = ComboBoxSort.Text;
-                if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Sort.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //string cur = ComboBoxSort.Text;
+                //if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Sort.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -163,17 +161,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxContacts.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Contacts.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Contacts.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -185,35 +183,77 @@ namespace CFUSystem
         {
             try
             {
-                Regex regex = new Regex("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
-                if (regex.IsMatch(TxtBoxEmail.Text))
+                string cur = TxtBoxEmail.Text;
+                //if (string.IsNullOrWhiteSpace(cur))
+                //{
+                //    BtnInfoSave.Enabled = false;
+                //}
+                //else
+                //{
+                if (cur.Contains("'"))
                 {
-                    if (WorkingState.Add == this.WorkingState)
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                    else if (WorkingState.Modify == this.WorkingState)
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-
-                    return;
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxEmail.Focus();
+                    //BtnInfoSave.Enabled = false;
                 }
-
-                if (WorkingState.Add == this.WorkingState)
+                //else
+                //{
+                //BtnInfoSave.Enabled = true;
+                //}
+                //}
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.CompanyName.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
+                if (string.IsNullOrWhiteSpace(cur) || string.IsNullOrWhiteSpace(TxtBoxCompanyName.Text.Trim()))
                 {
                     BtnInfoSave.Enabled = false;
                 }
-                else if (WorkingState.Modify == this.WorkingState)
+                else
                 {
-                    BtnInfoSave.Enabled = false;
+                    BtnInfoSave.Enabled = true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            //try
+            //{
+            //Regex regex = new Regex("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
+            //if (regex.IsMatch(TxtBoxEmail.Text))
+            //{
+            //    if (WorkingState.Add == this.WorkingState)
+            //    {
+            //        BtnInfoSave.Enabled = true;
+            //    }
+            //    else if (WorkingState.Modify == this.WorkingState)
+            //    {
+            //        BtnInfoSave.Enabled = true;
+            //    }
+            //    return;
+            //}
 
+            //    if (WorkingState.Add == this.WorkingState)
+            //    {
+            //        BtnInfoSave.Enabled = false;
+            //    }
+            //    else if (WorkingState.Modify == this.WorkingState)
+            //    {
+            //        BtnInfoSave.Enabled = false;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void TxtBoxCompanyName_TextChanged(object sender, EventArgs e)
@@ -221,21 +261,37 @@ namespace CFUSystem
             try
             {
                 string cur = TxtBoxCompanyName.Text;
+                //if (string.IsNullOrWhiteSpace(cur))
+                //{
+                //    BtnInfoSave.Enabled = false;
+                //}
+                //else
+                //{
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxCompanyName.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.CompanyName.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
+                //}
+
+                if (string.IsNullOrWhiteSpace(cur) || string.IsNullOrWhiteSpace(TxtBoxEmail.Text.Trim()))
                 {
-                    if (this.Customer.CompanyName.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
+                    BtnInfoSave.Enabled = false;
+                }
+                else
+                {
+                    BtnInfoSave.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -254,17 +310,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxWebsite.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Website.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Website.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -282,17 +338,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxCountry.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Country.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Country.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -310,17 +366,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxAddress.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Address.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Address.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -338,17 +394,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxBusinessScope.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.BusinessScope.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.BusinessScope.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -366,17 +422,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxType.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Type.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Type.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -394,17 +450,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxDemand.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Demand.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Demand.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -422,17 +478,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxTelephone.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Telephone.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Telephone.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -450,17 +506,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxFax.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.FAX.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.FAX.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -478,17 +534,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxMobile.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Mobile.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Mobile.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -496,27 +552,27 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxMSN_TextChanged(object sender, EventArgs e)
+        private void TxtBoxWechat_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxMSN.Text;
+                string cur = TxtBoxWechat.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxMSN.Focus();
+                    TxtBoxWechat.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.MSN.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.MSN.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -534,17 +590,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxSkype.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Skype.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Skype.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -562,17 +618,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxLinkin.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Linkin.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Linkin.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -590,17 +646,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxWhatsApp.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Whatsapp.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Whatsapp.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -618,17 +674,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxTwiter.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Twiter.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Twiter.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -646,17 +702,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxFacebook.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Facebook.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Facebook.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -674,17 +730,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxComeFrom.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.ComeFrom.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.ComeFrom.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -702,17 +758,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxRemarks.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Remarks.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Remarks.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -730,17 +786,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxCustomerSize.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.CustomerSize.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.CustomerSize.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -758,17 +814,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxAmountStratification.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.AmountStratification.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.AmountStratification.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -786,17 +842,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxUsedBrands.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.UsedBrands.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.UsedBrands.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -814,17 +870,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxReligion.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Religion.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Religion.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -842,17 +898,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxCharacterTraits.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.CharacterTraits.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.CharacterTraits.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -870,17 +926,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxNormalCommunication.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.NormalCommunication.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.NormalCommunication.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -898,17 +954,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxNormalPayment.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.NormalPayment.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.NormalPayment.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -926,17 +982,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxDeliveryTimeSensitivity.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.DeliveryTimeSensitivity.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.DeliveryTimeSensitivity.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -954,17 +1010,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxNewProductRecommendReactionAcuity.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.NewProductRecommendReactionAcuity.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.NewProductRecommendReactionAcuity.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -982,17 +1038,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxProductFactors.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.ProductFactors.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.ProductFactors.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -1010,17 +1066,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxDecisionMaker.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.DecisionMaker.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.DecisionMaker.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -1028,7 +1084,7 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxLoyalty_TextChanged_1(object sender, EventArgs e)
+        private void TxtBoxLoyalty_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -1038,73 +1094,17 @@ namespace CFUSystem
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxLoyalty.Focus();
                 }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.Loyalty.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void TxtBoxCustomerSize_TextChanged_1(object sender, EventArgs e)
-        {
-            try
-            {
-                string cur = TxtBoxCustomerSize.Text;
-                if (cur.Contains("'"))
-                {
-                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxCustomerSize.Focus();
-                }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.CustomerSize.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void TxtBoxAmountStratification_TextChanged_1(object sender, EventArgs e)
-        {
-            try
-            {
-                string cur = TxtBoxAmountStratification.Text;
-                if (cur.Contains("'"))
-                {
-                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxAmountStratification.Focus();
-                }
-                else if (WorkingState.Modify == this.WorkingState)
-                {
-                    if (this.Customer.AmountStratification.Equals(cur))
-                    {
-                        BtnInfoSave.Enabled = false;
-                    }
-                    else
-                    {
-                        BtnInfoSave.Enabled = true;
-                    }
-                }
+                //else if (WorkingState.Modify == this.WorkingState)
+                //{
+                //    if (this.Customer.Loyalty.Equals(cur))
+                //    {
+                //        BtnInfoSave.Enabled = false;
+                //    }
+                //    else
+                //    {
+                //        BtnInfoSave.Enabled = true;
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -1132,7 +1132,7 @@ namespace CFUSystem
                 string telephone = this.Customer.Telephone = TxtBoxTelephone.Text.Trim();
                 string fax = this.Customer.FAX = TxtBoxFax.Text.Trim();
                 string mobile = this.Customer.Mobile = TxtBoxMobile.Text.Trim();
-                string msn = this.Customer.MSN = TxtBoxMSN.Text.Trim();
+                string wechat = this.Customer.Wechat = TxtBoxWechat.Text.Trim();
                 string skype = this.Customer.Skype = TxtBoxSkype.Text.Trim();
                 string linkin = this.Customer.Linkin = TxtBoxLinkin.Text.Trim();
                 string whatsapp = this.Customer.Whatsapp = TxtBoxWhatsApp.Text.Trim();
@@ -1160,45 +1160,53 @@ namespace CFUSystem
 
                 if (WorkingState.Add == this.WorkingState)
                 {
-                    int identity = TableCustomerManage.AddCustomerReturnIdentity(archivingDate, email, this.Seller);
-                    if (identity > 0)
+                    bool isExist = IsCustomerExist(company);
+                    if(isExist)
                     {
-                        this.DialogResult = DialogResult.OK;
-                        this.Customer.Id = identity;
 
-                        int num = TableCustomerManage.ModifyCustomerInfoById(this.Customer.Id,
-                        sort,
-                        contacts, email,
-                        company, website,
-                        country, address,
-                        scope, type, demand,
-                        telephone, fax, mobile, msn, skype, linkin, whatsapp, twiter, facebook,
-                        comefrom,
-                        usedBrands, decisionMaker, reactionAcuity, religion, charaterTraits, amountStratification,
-                        normalCommunication, normalPayment, customerSize, deliveryTimeSensitivity, loyalty, productFactors,
-                        remarks, modify);
-
-                        SetCustomerInfoWorkingState(WorkingState.Modify);
-
-                        DialogResult result = MessageBox.Show(this, "添加客户信息成功！您想要 【是】 继续添加客户跟进日志，【否】 关闭客户信息界面，【取消】 什么也不做", this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
-                        if (DialogResult.Yes == result)
-                        {
-                            tabControl1.TabPages.Add(tabPage2);
-                            tabControl1.SelectedTab = tabPage2;
-                        }
-                        else if (DialogResult.No == result)
-                        {
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-                        }
-                        else if (DialogResult.Cancel == result)
-                        {
-                            tabControl1.TabPages.Add(tabPage2);
-                        }
                     }
                     else
                     {
-                        MessageBox.Show(this, "添加客户信息不成功！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        int identity = TableCustomerManage.AddCustomerReturnIdentity(archivingDate, email, this.User.Name);
+                        if (identity > 0)
+                        {
+                            //this.DialogResult = DialogResult.OK;
+                            this.Customer.Id = identity;
+
+                            int num = TableCustomerManage.ModifyCustomerInfoById(this.Customer.Id,
+                            sort,
+                            contacts, email,
+                            company, website,
+                            country, address,
+                            scope, type, demand,
+                            telephone, fax, mobile, "", wechat, skype, linkin, whatsapp, twiter, facebook,
+                            comefrom,
+                            usedBrands, decisionMaker, reactionAcuity, religion, charaterTraits, amountStratification,
+                            normalCommunication, normalPayment, customerSize, deliveryTimeSensitivity, loyalty, productFactors,
+                            remarks, modify);
+
+                            SetCustomerInfoWorkingState(WorkingState.Modify);
+
+                            DialogResult result = MessageBox.Show(this, "添加客户信息成功！您想要 【是】 继续添加客户跟进日志，【否】 关闭客户信息界面，【取消】 什么也不做", this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+                            if (DialogResult.Yes == result)
+                            {
+                                tabControl1.TabPages.Add(tabPage2);
+                                tabControl1.SelectedTab = tabPage2;
+                            }
+                            else if (DialogResult.No == result)
+                            {
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else if (DialogResult.Cancel == result)
+                            {
+                                tabControl1.TabPages.Add(tabPage2);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(this, "添加客户信息不成功！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else if (WorkingState.Modify == this.WorkingState)
@@ -1209,7 +1217,7 @@ namespace CFUSystem
                         company, website,
                         country, address,
                         scope, type, demand,
-                        telephone, fax, mobile, msn, skype, linkin, whatsapp, twiter, facebook,
+                        telephone, fax, mobile, "", wechat, skype, linkin, whatsapp, twiter, facebook,
                         comefrom,
                         usedBrands, decisionMaker, reactionAcuity, religion, charaterTraits, amountStratification,
                         normalCommunication, normalPayment, customerSize, deliveryTimeSensitivity, loyalty, productFactors,
@@ -1251,14 +1259,17 @@ namespace CFUSystem
                 DTPArchiving.Enabled = true;
 
                 BtnInfoSave.Text = "添加";
-                BtnInfoSave.Enabled = false;
+                //BtnInfoSave.Enabled = false;
             }
             else if (WorkingState.Modify == state)
             {
                 DTPArchiving.Enabled = false;
+                TxtBoxCompanyName.Enabled = false;
+                LblCompanyVerify.Visible = false;
+                LblCompanyNameStatus.Visible = false;
 
                 BtnInfoSave.Text = "更新";
-                BtnInfoSave.Enabled = false;
+                //BtnInfoSave.Enabled = false;
             }
         }
 
@@ -1392,7 +1403,7 @@ namespace CFUSystem
                             FollowUpLog = log,
                         };
                         DialogResult result = frmFollowUpLog.ShowDialog(this);
-                        if(DialogResult.OK == result)
+                        if (DialogResult.OK == result)
                         {
                             LoadAllLogs(this.Customer.Id);
                             //this.DialogResult = DialogResult.OK;
@@ -1451,9 +1462,8 @@ namespace CFUSystem
         {
             DataGridViewFollowUpLogs.ClearSelection();
 
-            DataSet dataSet = TableCustomerManage.QueryFollowUpLogsByCustomerId(CustomerId);
-            DataGridViewFollowUpLogs.DataSource = dataSet;
-            DataGridViewFollowUpLogs.DataMember = "TB_CustomerFollowUpLogs";
+            DataTable dataTable = TableCustomerManage.QueryFollowUpLogsByCustomerId(CustomerId);
+            DataGridViewFollowUpLogs.DataSource = dataTable;
             FormatDataGridView(DataGridViewFollowUpLogs);
         }
 
@@ -1509,6 +1519,46 @@ namespace CFUSystem
 
                 col = grid.Columns["CustomerInfoID"];
                 col.Visible = false;
+            }
+        }
+
+        private bool IsCustomerExist(string company)
+        {
+            bool isExist = false;
+
+            DataTable dataTable = TableCustomerManage.QueryCustomerByCompanyName(company);
+            if ((null != dataTable) && (dataTable.Rows.Count > 0))
+            {
+                DataRow dataRow = dataTable.Rows[0];
+                var item = dataRow.ToExpression<CustomerInfo>();
+                CustomerInfo customer = item(dataRow);
+                MessageBox.Show(this, "该客户已被 " + customer.BelongsTo + " 录入！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                isExist = true;
+            }
+
+            return isExist;
+        }
+
+        private void LblCompanyVerify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string company = TxtBoxCompanyName.Text.Trim();
+                if (IsCustomerExist(company))
+                {
+                    LblCompanyNameStatus.Text = "不可用";
+                    LblCompanyNameStatus.ForeColor = Color.Red;
+                }
+                else
+                {
+                    LblCompanyNameStatus.Text = "可用";
+                    LblCompanyNameStatus.ForeColor = Color.Green;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

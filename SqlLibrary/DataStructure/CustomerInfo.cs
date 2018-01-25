@@ -24,6 +24,7 @@ namespace SqlLibrary.DataStructure
         public string FAX { get; set; }
         public string Skype { get; set; }
         public string MSN { get; set; }
+        public string Wechat { get; set; }
         public string Facebook { get; set; }
         public string Linkin { get; set; }
         public string Whatsapp { get; set; }

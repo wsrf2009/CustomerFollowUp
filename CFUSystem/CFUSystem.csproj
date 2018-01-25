@@ -8,9 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CFUSystem</RootNamespace>
     <AssemblyName>CFUSystem</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -46,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cfus.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -53,7 +57,9 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
@@ -72,12 +78,6 @@
     </Compile>
     <Compile Include="AccountList.Designer.cs">
       <DependentUpon>AccountList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddAccount.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AddAccount.Designer.cs">
-      <DependentUpon>AddAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityConverter.cs" />
     <Compile Include="FrmAccountManager.cs">
@@ -139,9 +139,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AccountList.resx">
       <DependentUpon>AccountList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddAccount.resx">
-      <DependentUpon>AddAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAccountManager.resx">
       <DependentUpon>FrmAccountManager.cs</DependentUpon>
@@ -211,6 +208,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cfus.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

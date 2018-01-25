@@ -10,10 +10,13 @@ namespace SqlLibrary
 {
     public class TableCustomerManage
     {
+        private const string TABLE_CUSTOMERINFO = "customerinfo";
+        private const string TABLE_CUSTOMERFOLLOWUPLOGS = "customerfollowuplogs";
+
         #region 客户信息
         public static int AddCustomerReturnIdentity(string archivingDate, string email, string belongsTo)
         {
-            string sqlCmd = "insert into TB_CustomerInfo (" +
+            string sqlCmd = "insert into " + TABLE_CUSTOMERINFO + " (" +
                 "ArchivingTime, Email, BelongsTo) values ('" +
                 archivingDate + "', '" + email + "','" + belongsTo + "'); select @@Identity";
             object obj = DatabaseHelper.ExecuteScalar(sqlCmd);
@@ -22,13 +25,13 @@ namespace SqlLibrary
 
         public static int DeleteCustomerById(int id)
         {
-            string sqlCmd = "delete from TB_CustomerInfo where Id = '" + id + "'";
+            string sqlCmd = "delete from " + TABLE_CUSTOMERINFO + " where Id = '" + id + "'";
             return DatabaseHelper.ExecuteNonQuery(sqlCmd);
         }
 
         public static int QueryAllCustomerNumber()
         {
-            string sqlCmd = "select count (*) from TB_CustomerInfo";
+            string sqlCmd = "select count (*) from " + TABLE_CUSTOMERINFO;
             object obj = DatabaseHelper.ExecuteScalar(sqlCmd);
             return Convert.ToInt32(obj);
         }
@@ -38,34 +41,21 @@ namespace SqlLibrary
             if (page < 1) page = 1;
             int pages = pageSize * (page - 1);
 
-            string sqlCmd = "select top " + pageSize + " * from TB_CustomerInfo where Id not in (select top " + pages + " Id from TB_CustomerInfo order by LastFollowUpTime desc) order by LastFollowUpTime desc";
+            string sqlCmd = "select top " + pageSize + " * from " + TABLE_CUSTOMERINFO + " where Id not in (select top " + pages + " Id from "+ TABLE_CUSTOMERINFO + " order by LastFollowUpTime desc) order by LastFollowUpTime desc";
             return DatabaseHelper.ExecuteSqlCommand(sqlCmd);
-        }
-
-        public static DataSet QueryCustomerInfoBySeller(string userName)
-        {
-            SqlConnection sqlConnection = DatabaseHelper.CreateDatabaseHandler();
-            sqlConnection.Open();
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();         //创建SQL命令执行对象
-            string s1 = "select * from TB_CustomerInfo where BelongsTo = '" + userName + "'";                                            //编写SQL命令
-            sqlCommand.CommandText = s1;                           //执行SQL命令
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
-            {
-                SelectCommand = sqlCommand                       //让适配器执行SELECT命令
-            };       //实例化数据适配器
-            sqlConnection.Close();
-
-            DataSet dataSet = new DataSet();
-            int n = sqlDataAdapter.Fill(dataSet, "TB_CustomerInfo");
-
-            return dataSet;
         }
 
         public static int QueryCustomerNumberByUserName(string userName)
         {
-            string sqlCmd = "select count (*) from TB_CustomerInfo where BelongsTo = '" + userName + "'";
+            string sqlCmd = "select count (*) from "+ TABLE_CUSTOMERINFO + " where BelongsTo = '" + userName + "'";
             object obj = DatabaseHelper.ExecuteScalar(sqlCmd);
             return Convert.ToInt32(obj);
+        }
+
+        public static DataTable QueryCustomerByCompanyName(string company)
+        {
+            string sqlCmd = "select * from " + TABLE_CUSTOMERINFO + " where CompanyName = '" + company + "'";
+            return DatabaseHelper.ExecuteSqlCommand(sqlCmd);
         }
 
         public static DataTable QueryCustomerByUserNameAndPage(string userName, int page, int pageSize)
@@ -73,7 +63,7 @@ namespace SqlLibrary
             if (page < 1) page = 1;
             int pages = pageSize * (page - 1);
 
-            string sqlCmd = "select top " + pageSize + " * from TB_CustomerInfo where Id not in (select top " + pages + " Id from TB_CustomerInfo where BelongsTo = '" + userName + "' order by LastFollowUpTime desc) and BelongsTo = '" + userName + "' order by LastFollowUpTime desc";
+            string sqlCmd = "select top " + pageSize + " * from "+ TABLE_CUSTOMERINFO + " where Id not in (select top " + pages + " Id from "+ TABLE_CUSTOMERINFO + " where BelongsTo = '" + userName + "' order by LastFollowUpTime desc) and BelongsTo = '" + userName + "' order by LastFollowUpTime desc";
             return DatabaseHelper.ExecuteSqlCommand(sqlCmd);
         }
 
@@ -83,7 +73,7 @@ namespace SqlLibrary
             string company, string website,
             string country, string address,
             string scope, string type, string demand,
-            string telephone, string fax, string mobile, string msn, string skype, string linkin, string whatsapp, string twiter, string facebook,
+            string telephone, string fax, string mobile, string msn, string wechat, string skype, string linkin, string whatsapp, string twiter, string facebook,
             string comefrom,
             string usedBrands, string decisionMaker, string reactionAcuity, string religion, string charaterTraits,
             string amountStratification, string normalCommunication, string normalPayment, string customerSize,
@@ -91,13 +81,13 @@ namespace SqlLibrary
             string remarks,
             string  modify)
         {
-            string sqlCmd = "update TB_CustomerInfo set " +
+            string sqlCmd = "update "+ TABLE_CUSTOMERINFO + " set " +
                 "Sort = '" + sort + "', " +
                 "Contacts = '" + contacts + "', Email = '" + email + "', " +
                 "CompanyName = '" + company + "', Website = '" + website + "', " +
                 "Country = '" + country + "', Address = '" + address + "', " +
                 "BusinessScope = '" + scope + "', Type = '" + type + "', Demand = '" + demand + "', " +
-                "Telephone = '" + telephone + "', FAX = '" + fax + "', Mobile = '" + mobile + "', MSN = '" + msn + "', Skype = '" + skype + "', Linkin = '" + linkin + "', Whatsapp = '" + whatsapp + "', Twiter = '" + twiter + "', Facebook = '" + facebook + "', " +
+                "Telephone = '" + telephone + "', FAX = '" + fax + "', Mobile = '" + mobile + "', MSN = '" + msn + "', Wechat = '" + wechat + "', Skype = '" + skype + "', Linkin = '" + linkin + "', Whatsapp = '" + whatsapp + "', Twiter = '" + twiter + "', Facebook = '" + facebook + "', " +
                 "ComeFrom = '" + comefrom + "', " +
                 "UsedBrands = '" + usedBrands + "', DecisionMaker = '" + decisionMaker +"', " +
                 "NewProductRecommendReactionAcuity = '" + reactionAcuity + "', " +
@@ -120,7 +110,7 @@ namespace SqlLibrary
             string briefing, string content,
             string modify, string seller)
         {
-            string sqlCmd = "insert into TB_CustomerFollowUpLogs (" +
+            string sqlCmd = "insert into " + TABLE_CUSTOMERFOLLOWUPLOGS + " (" +
                 "Email, CompanyName, CustomerInfoId, " +
                 "Number, Time, State, " +
                 "Briefing, Content, " +
@@ -135,43 +125,14 @@ namespace SqlLibrary
 
         public static int DeleteFollowUpLogById(int id)
         {
-            string sqlCmd = "delete from TB_CustomerFollowUpLogs where Id = '" + id + "'";
+            string sqlCmd = "delete from " + TABLE_CUSTOMERFOLLOWUPLOGS + " where Id = '" + id + "'";
             return DatabaseHelper.ExecuteNonQuery(sqlCmd);
         }
 
-        public static SqlDataAdapter QueryFollowUpLogsByEmail(string email)
+        public static DataTable QueryFollowUpLogsByCustomerId(int customerId)
         {
-            SqlConnection sqlConnection = DatabaseHelper.CreateDatabaseHandler();
-            sqlConnection.Open();
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();         //创建SQL命令执行对象
-            string s1 = "select * from TB_CustomerFollowUpLogs where Email = '" + email + "'";                                            //编写SQL命令
-            sqlCommand.CommandText = s1;                           //执行SQL命令
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
-            {
-                SelectCommand = sqlCommand                       //让适配器执行SELECT命令
-            };       //实例化数据适配器
-            sqlConnection.Close();
-
-            return sqlDataAdapter;
-        }
-
-        public static DataSet QueryFollowUpLogsByCustomerId(int customerId)
-        {
-            SqlConnection sqlConnection = DatabaseHelper.CreateDatabaseHandler();
-            sqlConnection.Open();
-            SqlCommand sqlCommand = sqlConnection.CreateCommand();
-            string s1 = "select * from TB_CustomerFollowUpLogs where CustomerInfoId = '" + customerId + "'";
-            sqlCommand.CommandText = s1;
-            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter
-            {
-                SelectCommand = sqlCommand
-            };
-            sqlConnection.Close();
-
-            DataSet dataSet = new DataSet();
-            int n = sqlDataAdapter.Fill(dataSet, "TB_CustomerFollowUpLogs");
-
-            return dataSet;
+            string sqlCmd = "select * from " + TABLE_CUSTOMERFOLLOWUPLOGS + " where CustomerInfoId = '" + customerId + "'";
+            return DatabaseHelper.ExecuteSqlCommand(sqlCmd);
         }
 
         public static int ModifyFollowUpLogById(int id,
@@ -180,7 +141,7 @@ namespace SqlLibrary
             string briefing, string content,
             string modify, string seller)
         {
-            string sqlCmd = "update TB_CustomerFollowUpLogs set " +
+            string sqlCmd = "update "+ TABLE_CUSTOMERFOLLOWUPLOGS + " set " +
                 "Email = '" + email + "', CompanyName = '" + company + "', CustomerInfoId = '" + customerId + "', " +
                 "Number = '" + number + "', State = '" + state + "', " +
                 "Briefing = '" + briefing + "', Content = '" + content + "', " +

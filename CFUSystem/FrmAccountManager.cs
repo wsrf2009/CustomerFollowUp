@@ -1,13 +1,5 @@
-﻿using SqlLibrary;
-using SqlLibrary.DataStructure;
+﻿using SqlLibrary.DataStructure;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CFUSystem
@@ -26,10 +18,10 @@ namespace CFUSystem
         {
             try
             {
-                DataTable dataTable = TableUsersManage.QueryUserName(this.UserName);
-                DataRow dataRow = dataTable.Rows[0];
-                var item = dataRow.ToExpression<UserInfo>();
-                this.User = item(dataRow);
+                //DataTable dataTable = TableUsersManage.QueryUserName(this.UserName);
+                //DataRow dataRow = dataTable.Rows[0];
+                //var item = dataRow.ToExpression<UserInfo>();
+                //this.User = item(dataRow);
 
                 if (PrivilegeLevel.Administrative != this.User.Privilege)
                 {

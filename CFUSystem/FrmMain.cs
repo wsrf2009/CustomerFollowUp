@@ -1,5 +1,4 @@
-﻿using CFUSystem;
-using SqlLibrary;
+﻿using SqlLibrary;
 using SqlLibrary.DataStructure;
 using System;
 using System.Collections.Generic;
@@ -27,27 +26,38 @@ namespace CFUSystem
         {
             InitializeComponent();
 
-            this.Users = new List<UserInfo>();
+            this.Text = this.Text + " - v" + Application.ProductVersion;
 
-            LoadAllUsers();
+            this.Users = new List<UserInfo>();
+            //this.PageNumber = 1;
+
+            //LoadAllUsers();
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
             try
             {
-                Login();
+                LoadAllUsers();
 
-                LoadCustomerInPage(1);
+                if(Login())
+                {
+                    LoadCustomerInPage(1);
 
-                ToolStripMenuItem tsmiAdd = CreateAddCustomerInfoMenuItem();
-                contextMenuStrip1.Items.Add(tsmiAdd);
+                    ToolStripMenuItem tsmiAdd = CreateAddCustomerInfoMenuItem();
+                    contextMenuStrip1.Items.Add(tsmiAdd);
 
-                ToolStripSeparator tss = new ToolStripSeparator();
-                contextMenuStrip1.Items.Add(tss);
+                    ToolStripSeparator tss = new ToolStripSeparator();
+                    contextMenuStrip1.Items.Add(tss);
 
-                ToolStripMenuItem tsmiRefresh = CreateRefreshCustomerInfoMenuItem();
-                contextMenuStrip1.Items.Add(tsmiRefresh);
+                    ToolStripMenuItem tsmiRefresh = CreateRefreshCustomerInfoMenuItem();
+                    contextMenuStrip1.Items.Add(tsmiRefresh);
+                }
+                else
+                {
+                    this.Close();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -140,9 +150,6 @@ namespace CFUSystem
                 col = grid.Columns["Type"];
                 col.Visible = false;
 
-                col = grid.Columns["Demand"];
-                col.Visible = false;
-
                 col = grid.Columns["Contacts"];
                 col.HeaderText = "联系人";
                 col.Width = 100;
@@ -165,6 +172,9 @@ namespace CFUSystem
                 col = grid.Columns["MSN"];
                 col.Visible = false;
 
+                col = grid.Columns["Wechat"];
+                col.Visible = false;
+
                 col = grid.Columns["Facebook"];
                 col.Visible = false;
 
@@ -185,17 +195,15 @@ namespace CFUSystem
                 col.Width = 100;
                 col.DisplayIndex = i++;
 
-                col = grid.Columns["BelongsTo"];
-                if (this.UserName.Equals(AllUsers))
-                {
-                    col.HeaderText = "属于";
-                    col.Width = 100;
-                    col.DisplayIndex = i++;
-                }
-                else
-                {
-                    col.Visible = false;
-                }
+                col = grid.Columns["Demand"];
+                col.HeaderText = "需求";
+                col.Width = 100;
+                col.DisplayIndex = i++;
+
+                col = grid.Columns["Loyalty"];
+                col.HeaderText = "忠诚度";
+                col.Width = 100;
+                col.DisplayIndex = i++;
 
                 col = grid.Columns["Remarks"];
                 col.Visible = false;
@@ -219,6 +227,11 @@ namespace CFUSystem
                 col = grid.Columns["LastFollowUpState"];
                 col.HeaderText = "最后跟进状态";
                 col.Width = 100;
+                col.DisplayIndex = i++;
+
+                col = grid.Columns["BelongsTo"];
+                col.HeaderText = "客户归属";
+                col.Width = 120;
                 col.DisplayIndex = i++;
 
                 col = grid.Columns["UsedBrands"];
@@ -249,9 +262,6 @@ namespace CFUSystem
                 col.Visible = false;
 
                 col = grid.Columns["DeliveryTimeSensitivity"];
-                col.Visible = false;
-
-                col = grid.Columns["Loyalty"];
                 col.Visible = false;
 
                 col = grid.Columns["ProductFactors"];
@@ -363,7 +373,7 @@ namespace CFUSystem
         {
             try
             {
-                e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);
+                e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1 + ((this.PageNumber - 1) * PageSize));
             }
             catch (Exception ex)
             {
@@ -375,7 +385,8 @@ namespace CFUSystem
         {
             FrmAccountManager frmAccountManager = new FrmAccountManager
             {
-                UserName = this.UserName
+                //UserName = this.UserName
+                User = this.User,
             };
             DialogResult dialogResult = frmAccountManager.ShowDialog(this);
             if (DialogResult.No == dialogResult)
@@ -386,6 +397,12 @@ namespace CFUSystem
                     SetLoginState(LoginState.Logout);
                 }
             }
+
+            DataTable dataTable = TableUsersManage.QueryUserByUserId(this.User.Id);
+            DataRow dataRow = dataTable.Rows[0];
+            var item = dataRow.ToExpression<UserInfo>();
+            this.User = item(dataRow);
+            this.LblUserName.Text = this.User.Nickname;
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -593,13 +610,15 @@ namespace CFUSystem
             FrmCustomerInfo frmCustomerInfo = new FrmCustomerInfo
             {
                 WorkingState = WorkingState.Add,
-                Seller = this.UserName
+                //Seller = this.UserName
+                User = this.User,
             };
             DialogResult dialogResult = frmCustomerInfo.ShowDialog(this);
-            if (DialogResult.OK == dialogResult)
-            {
+            //if (DialogResult.OK == dialogResult)
+            //{
+            RefreshCustomer();
                 LoadCustomerInPage(this.PageNumber);
-            }
+            //}
         }
 
         private void EditDataGridViewRow(DataGridViewRow row)
@@ -611,7 +630,8 @@ namespace CFUSystem
             {
                 WorkingState = WorkingState.Modify,
                 Customer = item(dataRow),
-                Seller = this.UserName
+                //Seller = this.UserName
+                User = this.User,
             };
             DialogResult dialogResult = frmCustomerInfo.ShowDialog(this);
             if (DialogResult.OK == dialogResult)
@@ -626,7 +646,7 @@ namespace CFUSystem
             if (LoginState.Login == state)
             {
                 label1.Visible = true;
-                LblUserName.Text = this.User.Name;
+                LblUserName.Text = this.User.Nickname;
                 this.BtnAccountManage.Visible = true;
                 this.BtnExit.Text = "退出";
                 //this.ComboBoxSeller.Enabled = true;
@@ -651,14 +671,14 @@ namespace CFUSystem
 
         }
 
-        private void Login()
+        private bool Login()
         {
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog(this);
             if (DialogResult.OK != frmLogin.DialogResult)
             {
                 this.Close();
-                return;
+                return false;
             }
 
             this.User = frmLogin.User;
@@ -678,6 +698,8 @@ namespace CFUSystem
             SetLoginState(LoginState.Login);
 
             RefreshCustomer();
+
+            return true;
         }
 
         private void LoadAllUsers()

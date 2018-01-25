@@ -31,6 +31,7 @@ namespace CFUSystem
                 this.TxtBoxUserName.Text = this.User.Name;
                 this.TxtBoxUserName.Enabled = false;
                 this.TxtBoxPassword.Text = this.User.Password;
+                this.TxtBoxNickname.Text = this.User.Nickname;
                 this.ComboBoxPrivilege.Text = this.User.Privilege;
             }
         }
@@ -42,6 +43,12 @@ namespace CFUSystem
             try
             {
                 string name = TxtBoxUserName.Text.Trim();
+                if (name.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxUserName.Focus();
+                    return;
+                }
                 if (WorkingState.Add == this.WorkingState)
                 {
                     DataTable dataTable = TableUsersManage.QueryUserName(name);
@@ -54,16 +61,31 @@ namespace CFUSystem
                 }
 
                 string password = TxtBoxPassword.Text.Trim();
+                if (password.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxPassword.Focus();
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(password))
                 {
                     MessageBox.Show(this, "密码不能为空！", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     TxtBoxPassword.Focus();
                     return;
                 }
+
+                string nickname = TxtBoxNickname.Text.Trim();
+                if (nickname.Contains("'"))
+                {
+                    MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    TxtBoxNickname.Focus();
+                    return;
+                }
+
                 string privilege = ComboBoxPrivilege.Text;
                 if (WorkingState.Add == this.WorkingState)
                 {
-                    int identity = TableUsersManage.AddUserAndReturnIdentity(name, password, privilege, "", DateTime.Now.ToLocalTime().ToString());
+                    int identity = TableUsersManage.AddUserAndReturnIdentity(name, password, privilege, nickname, DateTime.Now.ToLocalTime().ToString());
                     if (identity > 0)
                     {
                         this.DialogResult = DialogResult.OK;
@@ -76,7 +98,7 @@ namespace CFUSystem
                 }
                 else if (WorkingState.Modify == this.WorkingState)
                 {
-                    int suc = TableUsersManage.ModifyUserByUserName(name, password, privilege, "");
+                    int suc = TableUsersManage.ModifyUserByUserName(name, password, privilege, nickname);
                     if (suc > 0)
                     {
                         this.DialogResult = DialogResult.OK;

@@ -35,6 +35,7 @@
             System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("管理", new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode4});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccountManager));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -88,6 +89,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 611);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAccountManager";
             this.Text = "账户管理";
             this.Load += new System.EventHandler(this.FrmAccountManager_Load);

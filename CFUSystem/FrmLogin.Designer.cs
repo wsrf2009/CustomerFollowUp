@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.txtBoxUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,9 +40,10 @@
             // 
             // txtBoxUserName
             // 
+            this.txtBoxUserName.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtBoxUserName.Location = new System.Drawing.Point(149, 83);
             this.txtBoxUserName.Name = "txtBoxUserName";
-            this.txtBoxUserName.Size = new System.Drawing.Size(209, 28);
+            this.txtBoxUserName.Size = new System.Drawing.Size(209, 33);
             this.txtBoxUserName.TabIndex = 0;
             this.txtBoxUserName.TextChanged += new System.EventHandler(this.txtBoxUserName_TextChanged);
             // 
@@ -66,17 +68,18 @@
             // 
             // txtBoxPassword
             // 
+            this.txtBoxPassword.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txtBoxPassword.Location = new System.Drawing.Point(149, 134);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.PasswordChar = '*';
-            this.txtBoxPassword.Size = new System.Drawing.Size(209, 28);
+            this.txtBoxPassword.Size = new System.Drawing.Size(209, 33);
             this.txtBoxPassword.TabIndex = 3;
             this.txtBoxPassword.UseSystemPasswordChar = true;
             // 
             // ckBoxRememberPassword
             // 
             this.ckBoxRememberPassword.AutoSize = true;
-            this.ckBoxRememberPassword.Location = new System.Drawing.Point(376, 141);
+            this.ckBoxRememberPassword.Location = new System.Drawing.Point(376, 145);
             this.ckBoxRememberPassword.Name = "ckBoxRememberPassword";
             this.ckBoxRememberPassword.Size = new System.Drawing.Size(88, 22);
             this.ckBoxRememberPassword.TabIndex = 4;
@@ -85,6 +88,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnLogin.Location = new System.Drawing.Point(149, 195);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(209, 47);
@@ -116,9 +120,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxUserName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "登录";
             this.ResumeLayout(false);

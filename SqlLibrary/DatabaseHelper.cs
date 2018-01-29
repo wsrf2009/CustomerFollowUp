@@ -10,7 +10,8 @@ namespace SqlLibrary
         {
             //SqlConnection sqlConnection = 
             //    new SqlConnection("server=localhost;database=DB_CustomerFollowUp;uid=sa;pwd=xuanxuan123");
-            string sql = "Data Source=192.168.0.100;Initial Catalog=cfudb;Persist Security Info=True;User ID=sa;Password=1QAZ2wsx";
+            //string sql = "Data Source=192.168.0.100;Initial Catalog=cfudb;Persist Security Info=True;User ID=sa;Password=1QAZ2wsx";
+            string sql = "Data Source=1e7s137683.51mypc.cn,19829;Initial Catalog=cfudb;Persist Security Info=True;User ID=sa;Password=1QAZ2wsx";
             SqlConnection sqlConnection = new SqlConnection(sql);
             return sqlConnection;
         }
@@ -64,7 +65,10 @@ namespace SqlLibrary
             DataTable dataTable = null;
             //try
             //{
-                SqlConnection sqlConnection = CreateDatabaseHandler();
+
+            Console.WriteLine("sqlStr:" + sqlCmd);
+
+            SqlConnection sqlConnection = CreateDatabaseHandler();
                 sqlConnection.Open();
                 SqlCommand sqlCommand = sqlConnection.CreateCommand();         //创建SQL命令执行对象
                 sqlCommand.CommandText = sqlCmd;                           //执行SQL命令

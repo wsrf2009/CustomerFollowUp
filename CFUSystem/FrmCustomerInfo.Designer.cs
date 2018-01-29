@@ -40,52 +40,58 @@
             this.label27 = new System.Windows.Forms.Label();
             this.ComboBoxSort = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.TxtBoxCompanyName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.TxtBoxCompanyName = new System.Windows.Forms.TextBox();
             this.LblCompanyVerify = new System.Windows.Forms.Label();
             this.LblCompanyNameStatus = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.TxtBoxEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.TxtBoxEmail = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtBoxCountry = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtBoxAddress = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtBoxWebsite = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.TxtBoxContacts = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.TxtBoxComeFrom = new System.Windows.Forms.TextBox();
+            this.ComboBoxComeFrom = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.TxtBoxLoyalty = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.TxtBoxCountry = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.TxtBoxAmountStratification = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.TxtBoxCustomerSize = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtBoxBusinessScope = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtBoxType = new System.Windows.Forms.TextBox();
+            this.ComboBoxLoyalty = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtBoxDemand = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.ComboBoxCustomerSize = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.ComboBoxAmountStratification = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ComboBoxType = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ComboBoxBusinessScope = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.TxtBoxUsedBrands = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.TxtBoxReligion = new System.Windows.Forms.TextBox();
-            this.TxtBoxCharacterTraits = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.ComboBoxCharacterTraits = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.TxtBoxNormalCommunication = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
             this.TxtBoxNormalPayment = new System.Windows.Forms.TextBox();
-            this.TxtBoxDeliveryTimeSensitivity = new System.Windows.Forms.TextBox();
-            this.TxtBoxNewProductRecommendReactionAcuity = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.ComboBoxDeliveryTimeSensitivity = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.ComboBoxNewProductRecommendReactionAcuity = new System.Windows.Forms.ComboBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.TxtBoxProductFactors = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.TxtBoxDecisionMaker = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -109,11 +115,6 @@
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.TxtBoxRemarks = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.TxtBoxWebsite = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtBoxAddress = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnInfoSave = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -127,13 +128,14 @@
             this.tableLayoutPanel19.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel20.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel20.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewFollowUpLogs)).BeginInit();
@@ -188,23 +190,25 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel19, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel20, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel8, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel14, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel9, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel20, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel11, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel14, 0, 10);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 220F));
@@ -292,8 +296,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.tableLayoutPanel2.Controls.Add(this.TxtBoxCompanyName, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.TxtBoxCompanyName, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.LblCompanyVerify, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.LblCompanyNameStatus, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -305,7 +309,19 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1004, 70);
-            this.tableLayoutPanel2.TabIndex = 8;
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "*公司名称：";
             // 
             // TxtBoxCompanyName
             // 
@@ -317,20 +333,8 @@
             this.TxtBoxCompanyName.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxCompanyName.Name = "TxtBoxCompanyName";
             this.TxtBoxCompanyName.Size = new System.Drawing.Size(642, 33);
-            this.TxtBoxCompanyName.TabIndex = 11;
+            this.TxtBoxCompanyName.TabIndex = 2;
             this.TxtBoxCompanyName.TextChanged += new System.EventHandler(this.TxtBoxCompanyName_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 30);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "*公司名称：";
             // 
             // LblCompanyVerify
             // 
@@ -341,7 +345,7 @@
             this.LblCompanyVerify.Margin = new System.Windows.Forms.Padding(5, 15, 5, 5);
             this.LblCompanyVerify.Name = "LblCompanyVerify";
             this.LblCompanyVerify.Size = new System.Drawing.Size(44, 30);
-            this.LblCompanyVerify.TabIndex = 12;
+            this.LblCompanyVerify.TabIndex = 3;
             this.LblCompanyVerify.Text = "验证";
             this.LblCompanyVerify.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.LblCompanyVerify.Click += new System.EventHandler(this.LblCompanyVerify_Click);
@@ -354,7 +358,7 @@
             this.LblCompanyNameStatus.Margin = new System.Windows.Forms.Padding(5, 15, 5, 5);
             this.LblCompanyNameStatus.Name = "LblCompanyNameStatus";
             this.LblCompanyNameStatus.Size = new System.Drawing.Size(62, 30);
-            this.LblCompanyNameStatus.TabIndex = 13;
+            this.LblCompanyNameStatus.TabIndex = 4;
             this.LblCompanyNameStatus.Text = "未验证";
             this.LblCompanyNameStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -363,8 +367,8 @@
             this.tableLayoutPanel7.ColumnCount = 2;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Controls.Add(this.TxtBoxEmail, 1, 1);
             this.tableLayoutPanel7.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.TxtBoxEmail, 1, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(9, 149);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -374,7 +378,19 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(1004, 100);
-            this.tableLayoutPanel7.TabIndex = 9;
+            this.tableLayoutPanel7.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label9.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(46, 25);
+            this.label9.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 60);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "*邮箱：";
             // 
             // TxtBoxEmail
             // 
@@ -386,20 +402,120 @@
             this.TxtBoxEmail.Name = "TxtBoxEmail";
             this.TxtBoxEmail.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TxtBoxEmail.Size = new System.Drawing.Size(862, 68);
-            this.TxtBoxEmail.TabIndex = 5;
+            this.TxtBoxEmail.TabIndex = 2;
             this.TxtBoxEmail.TextChanged += new System.EventHandler(this.TxtBoxEmail_TextChanged);
             // 
-            // label9
+            // tableLayoutPanel8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(46, 25);
-            this.label9.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 60);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "*邮箱：";
+            this.tableLayoutPanel8.ColumnCount = 4;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.TxtBoxCountry, 1, 1);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(9, 252);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 3;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1004, 70);
+            this.tableLayoutPanel8.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(56, 25);
+            this.label3.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 30);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "国家：";
+            // 
+            // TxtBoxCountry
+            // 
+            this.TxtBoxCountry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxtBoxCountry.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtBoxCountry.Location = new System.Drawing.Point(136, 21);
+            this.TxtBoxCountry.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.TxtBoxCountry.Name = "TxtBoxCountry";
+            this.TxtBoxCountry.Size = new System.Drawing.Size(360, 33);
+            this.TxtBoxCountry.TabIndex = 2;
+            this.TxtBoxCountry.TextChanged += new System.EventHandler(this.TxtBoxCountry_TextChanged);
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 2;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Controls.Add(this.label5, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.TxtBoxAddress, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.TxtBoxWebsite, 1, 2);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(9, 325);
+            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 4;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(1004, 170);
+            this.tableLayoutPanel9.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label5.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(56, 25);
+            this.label5.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 80);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "地址：";
+            // 
+            // TxtBoxAddress
+            // 
+            this.TxtBoxAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxtBoxAddress.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtBoxAddress.Location = new System.Drawing.Point(136, 16);
+            this.TxtBoxAddress.Margin = new System.Windows.Forms.Padding(6);
+            this.TxtBoxAddress.Multiline = true;
+            this.TxtBoxAddress.Name = "TxtBoxAddress";
+            this.TxtBoxAddress.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.TxtBoxAddress.Size = new System.Drawing.Size(862, 88);
+            this.TxtBoxAddress.TabIndex = 2;
+            this.TxtBoxAddress.TextChanged += new System.EventHandler(this.TxtBoxAddress_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label2.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(56, 125);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 30);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "网站：";
+            // 
+            // TxtBoxWebsite
+            // 
+            this.TxtBoxWebsite.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxtBoxWebsite.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtBoxWebsite.Location = new System.Drawing.Point(136, 116);
+            this.TxtBoxWebsite.Margin = new System.Windows.Forms.Padding(6);
+            this.TxtBoxWebsite.Name = "TxtBoxWebsite";
+            this.TxtBoxWebsite.Size = new System.Drawing.Size(862, 33);
+            this.TxtBoxWebsite.TabIndex = 4;
+            this.TxtBoxWebsite.TextChanged += new System.EventHandler(this.TxtBoxWebsite_TextChanged);
             // 
             // tableLayoutPanel20
             // 
@@ -411,11 +527,11 @@
             this.tableLayoutPanel20.Controls.Add(this.label8, 0, 1);
             this.tableLayoutPanel20.Controls.Add(this.TxtBoxContacts, 1, 1);
             this.tableLayoutPanel20.Controls.Add(this.label19, 2, 1);
-            this.tableLayoutPanel20.Controls.Add(this.TxtBoxComeFrom, 3, 1);
+            this.tableLayoutPanel20.Controls.Add(this.ComboBoxComeFrom, 3, 1);
             this.tableLayoutPanel20.Controls.Add(this.label20, 0, 2);
-            this.tableLayoutPanel20.Controls.Add(this.TxtBoxLoyalty, 1, 2);
+            this.tableLayoutPanel20.Controls.Add(this.ComboBoxLoyalty, 1, 2);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(9, 528);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(9, 498);
             this.tableLayoutPanel20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 4;
@@ -424,7 +540,7 @@
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel20.Size = new System.Drawing.Size(1004, 120);
-            this.tableLayoutPanel20.TabIndex = 2;
+            this.tableLayoutPanel20.TabIndex = 6;
             // 
             // label8
             // 
@@ -458,19 +574,28 @@
             this.label19.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(69, 30);
-            this.label19.TabIndex = 5;
+            this.label19.TabIndex = 3;
             this.label19.Text = "来源：";
             // 
-            // TxtBoxComeFrom
+            // ComboBoxComeFrom
             // 
-            this.TxtBoxComeFrom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxComeFrom.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxComeFrom.Location = new System.Drawing.Point(638, 21);
-            this.TxtBoxComeFrom.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxComeFrom.Name = "TxtBoxComeFrom";
-            this.TxtBoxComeFrom.Size = new System.Drawing.Size(360, 33);
-            this.TxtBoxComeFrom.TabIndex = 6;
-            this.TxtBoxComeFrom.TextChanged += new System.EventHandler(this.TxtBoxComeFrom_TextChanged);
+            this.ComboBoxComeFrom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxComeFrom.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ComboBoxComeFrom.FormattingEnabled = true;
+            this.ComboBoxComeFrom.Items.AddRange(new object[] {
+            "询盘",
+            "Google搜索",
+            "Linkin",
+            "Facebook",
+            "朋友推荐",
+            "Whatsapp",
+            "Skype"});
+            this.ComboBoxComeFrom.Location = new System.Drawing.Point(638, 21);
+            this.ComboBoxComeFrom.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxComeFrom.Name = "ComboBoxComeFrom";
+            this.ComboBoxComeFrom.Size = new System.Drawing.Size(360, 30);
+            this.ComboBoxComeFrom.TabIndex = 4;
+            this.ComboBoxComeFrom.TextUpdate += new System.EventHandler(this.ComboBoxComeFrom_TextUpdate);
             // 
             // label20
             // 
@@ -481,84 +606,87 @@
             this.label20.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(89, 30);
-            this.label20.TabIndex = 7;
+            this.label20.TabIndex = 5;
             this.label20.Text = "忠诚度：";
             // 
-            // TxtBoxLoyalty
+            // ComboBoxLoyalty
             // 
-            this.TxtBoxLoyalty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxLoyalty.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxLoyalty.Location = new System.Drawing.Point(136, 71);
-            this.TxtBoxLoyalty.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxLoyalty.Name = "TxtBoxLoyalty";
-            this.TxtBoxLoyalty.Size = new System.Drawing.Size(360, 33);
-            this.TxtBoxLoyalty.TabIndex = 8;
-            this.TxtBoxLoyalty.TextChanged += new System.EventHandler(this.TxtBoxLoyalty_TextChanged);
+            this.ComboBoxLoyalty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxLoyalty.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxLoyalty.FormattingEnabled = true;
+            this.ComboBoxLoyalty.Items.AddRange(new object[] {
+            "高",
+            "中",
+            "低"});
+            this.ComboBoxLoyalty.Location = new System.Drawing.Point(136, 71);
+            this.ComboBoxLoyalty.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxLoyalty.Name = "ComboBoxLoyalty";
+            this.ComboBoxLoyalty.Size = new System.Drawing.Size(360, 30);
+            this.ComboBoxLoyalty.TabIndex = 6;
+            this.ComboBoxLoyalty.TextUpdate += new System.EventHandler(this.ComboBoxLoyalty_TextUpdate);
             // 
-            // tableLayoutPanel8
+            // tableLayoutPanel3
             // 
-            this.tableLayoutPanel8.ColumnCount = 4;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.TxtBoxCountry, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(9, 252);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 3;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1004, 70);
-            this.tableLayoutPanel8.TabIndex = 10;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.label7, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.TxtBoxDemand, 1, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(9, 621);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1004, 120);
+            this.tableLayoutPanel3.TabIndex = 7;
             // 
-            // TxtBoxCountry
+            // label7
             // 
-            this.TxtBoxCountry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxCountry.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxCountry.Location = new System.Drawing.Point(136, 21);
-            this.TxtBoxCountry.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxCountry.Name = "TxtBoxCountry";
-            this.TxtBoxCountry.Size = new System.Drawing.Size(360, 33);
-            this.TxtBoxCountry.TabIndex = 3;
-            this.TxtBoxCountry.TextChanged += new System.EventHandler(this.TxtBoxCountry_TextChanged);
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label7.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(56, 25);
+            this.label7.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 80);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "需求：";
             // 
-            // label3
+            // TxtBoxDemand
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(56, 25);
-            this.label3.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 30);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "国家：";
+            this.TxtBoxDemand.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxtBoxDemand.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TxtBoxDemand.Location = new System.Drawing.Point(136, 21);
+            this.TxtBoxDemand.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.TxtBoxDemand.Multiline = true;
+            this.TxtBoxDemand.Name = "TxtBoxDemand";
+            this.TxtBoxDemand.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.TxtBoxDemand.Size = new System.Drawing.Size(862, 89);
+            this.TxtBoxDemand.TabIndex = 2;
+            this.TxtBoxDemand.TextChanged += new System.EventHandler(this.TxtBoxDemand_TextChanged);
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.TxtBoxAmountStratification, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label25, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.TxtBoxCustomerSize, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label24, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label4, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.TxtBoxBusinessScope, 3, 2);
+            this.tableLayoutPanel4.Controls.Add(this.ComboBoxCustomerSize, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label25, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.ComboBoxAmountStratification, 3, 1);
             this.tableLayoutPanel4.Controls.Add(this.label6, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.TxtBoxType, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.TxtBoxDemand, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label23, 2, 3);
-            this.tableLayoutPanel4.Controls.Add(this.TxtBoxUsedBrands, 3, 3);
+            this.tableLayoutPanel4.Controls.Add(this.ComboBoxType, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.ComboBoxBusinessScope, 3, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label23, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.TxtBoxUsedBrands, 1, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(9, 651);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(9, 744);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 5;
@@ -567,146 +695,138 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1004, 170);
-            this.tableLayoutPanel4.TabIndex = 4;
-            // 
-            // TxtBoxAmountStratification
-            // 
-            this.TxtBoxAmountStratification.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxAmountStratification.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxAmountStratification.Location = new System.Drawing.Point(663, 21);
-            this.TxtBoxAmountStratification.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxAmountStratification.Name = "TxtBoxAmountStratification";
-            this.TxtBoxAmountStratification.Size = new System.Drawing.Size(335, 33);
-            this.TxtBoxAmountStratification.TabIndex = 8;
-            this.TxtBoxAmountStratification.TextChanged += new System.EventHandler(this.TxtBoxAmountStratification_TextChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label25.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label25.Location = new System.Drawing.Point(543, 25);
-            this.label25.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(109, 30);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "金额分层：";
-            // 
-            // TxtBoxCustomerSize
-            // 
-            this.TxtBoxCustomerSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxCustomerSize.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxCustomerSize.Location = new System.Drawing.Point(136, 21);
-            this.TxtBoxCustomerSize.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxCustomerSize.Name = "TxtBoxCustomerSize";
-            this.TxtBoxCustomerSize.Size = new System.Drawing.Size(335, 33);
-            this.TxtBoxCustomerSize.TabIndex = 6;
-            this.TxtBoxCustomerSize.TextChanged += new System.EventHandler(this.TxtBoxCustomerSize_TextChanged);
+            this.tableLayoutPanel4.TabIndex = 8;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Dock = System.Windows.Forms.DockStyle.Right;
             this.label24.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label24.Location = new System.Drawing.Point(56, 25);
+            this.label24.Location = new System.Drawing.Point(106, 25);
             this.label24.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(69, 30);
-            this.label24.TabIndex = 13;
+            this.label24.TabIndex = 1;
             this.label24.Text = "规模：";
             // 
-            // label4
+            // ComboBoxCustomerSize
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(543, 75);
-            this.label4.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 30);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "经营范围：";
+            this.ComboBoxCustomerSize.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxCustomerSize.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxCustomerSize.FormattingEnabled = true;
+            this.ComboBoxCustomerSize.Items.AddRange(new object[] {
+            "大",
+            "中",
+            "小"});
+            this.ComboBoxCustomerSize.Location = new System.Drawing.Point(186, 21);
+            this.ComboBoxCustomerSize.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxCustomerSize.Name = "ComboBoxCustomerSize";
+            this.ComboBoxCustomerSize.Size = new System.Drawing.Size(310, 30);
+            this.ComboBoxCustomerSize.TabIndex = 2;
+            this.ComboBoxCustomerSize.TextUpdate += new System.EventHandler(this.ComboBoxCustomerSize_TextUpdate);
             // 
-            // TxtBoxBusinessScope
+            // label25
             // 
-            this.TxtBoxBusinessScope.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxBusinessScope.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxBusinessScope.Location = new System.Drawing.Point(663, 71);
-            this.TxtBoxBusinessScope.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxBusinessScope.Name = "TxtBoxBusinessScope";
-            this.TxtBoxBusinessScope.Size = new System.Drawing.Size(335, 33);
-            this.TxtBoxBusinessScope.TabIndex = 12;
-            this.TxtBoxBusinessScope.TextChanged += new System.EventHandler(this.TxtBoxBusinessScope_TextChanged);
+            this.label25.AutoSize = true;
+            this.label25.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label25.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label25.Location = new System.Drawing.Point(568, 25);
+            this.label25.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(109, 30);
+            this.label25.TabIndex = 3;
+            this.label25.Text = "金额分层：";
+            // 
+            // ComboBoxAmountStratification
+            // 
+            this.ComboBoxAmountStratification.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxAmountStratification.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxAmountStratification.FormattingEnabled = true;
+            this.ComboBoxAmountStratification.Items.AddRange(new object[] {
+            "小于$10000",
+            "$10000 ~ $50000",
+            "大于$50000"});
+            this.ComboBoxAmountStratification.Location = new System.Drawing.Point(688, 21);
+            this.ComboBoxAmountStratification.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxAmountStratification.Name = "ComboBoxAmountStratification";
+            this.ComboBoxAmountStratification.Size = new System.Drawing.Size(310, 30);
+            this.ComboBoxAmountStratification.TabIndex = 4;
+            this.ComboBoxAmountStratification.TextUpdate += new System.EventHandler(this.ComboBoxAmountStratification_TextUpdate);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(56, 75);
+            this.label6.Location = new System.Drawing.Point(106, 75);
             this.label6.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 30);
-            this.label6.TabIndex = 3;
+            this.label6.TabIndex = 5;
             this.label6.Text = "类型：";
             // 
-            // TxtBoxType
+            // ComboBoxType
             // 
-            this.TxtBoxType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxType.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxType.Location = new System.Drawing.Point(136, 71);
-            this.TxtBoxType.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxType.Name = "TxtBoxType";
-            this.TxtBoxType.Size = new System.Drawing.Size(335, 33);
-            this.TxtBoxType.TabIndex = 10;
-            this.TxtBoxType.TextChanged += new System.EventHandler(this.TxtBoxType_TextChanged);
+            this.ComboBoxType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxType.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxType.FormattingEnabled = true;
+            this.ComboBoxType.Items.AddRange(new object[] {
+            "经销商",
+            "贸易商",
+            "制造商"});
+            this.ComboBoxType.Location = new System.Drawing.Point(186, 71);
+            this.ComboBoxType.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxType.Name = "ComboBoxType";
+            this.ComboBoxType.Size = new System.Drawing.Size(310, 30);
+            this.ComboBoxType.TabIndex = 6;
+            this.ComboBoxType.TextUpdate += new System.EventHandler(this.ComboBoxType_TextUpdate);
             // 
-            // label7
+            // label4
             // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label7.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(56, 125);
-            this.label7.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 30);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "需求：";
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label4.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(568, 75);
+            this.label4.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 30);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "经营范围：";
             // 
-            // TxtBoxDemand
+            // ComboBoxBusinessScope
             // 
-            this.TxtBoxDemand.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxDemand.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxDemand.Location = new System.Drawing.Point(136, 121);
-            this.TxtBoxDemand.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxDemand.Name = "TxtBoxDemand";
-            this.TxtBoxDemand.Size = new System.Drawing.Size(335, 33);
-            this.TxtBoxDemand.TabIndex = 14;
-            this.TxtBoxDemand.TextChanged += new System.EventHandler(this.TxtBoxDemand_TextChanged);
+            this.ComboBoxBusinessScope.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxBusinessScope.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxBusinessScope.FormattingEnabled = true;
+            this.ComboBoxBusinessScope.Location = new System.Drawing.Point(688, 71);
+            this.ComboBoxBusinessScope.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxBusinessScope.Name = "ComboBoxBusinessScope";
+            this.ComboBoxBusinessScope.Size = new System.Drawing.Size(310, 30);
+            this.ComboBoxBusinessScope.TabIndex = 8;
+            this.ComboBoxBusinessScope.TextUpdate += new System.EventHandler(this.ComboBoxBusinessScope_TextUpdate);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Dock = System.Windows.Forms.DockStyle.Right;
             this.label23.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label23.Location = new System.Drawing.Point(503, 125);
+            this.label23.Location = new System.Drawing.Point(26, 125);
             this.label23.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(149, 30);
-            this.label23.TabIndex = 7;
+            this.label23.TabIndex = 9;
             this.label23.Text = "使用过的品牌：";
             // 
             // TxtBoxUsedBrands
             // 
             this.TxtBoxUsedBrands.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TxtBoxUsedBrands.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxUsedBrands.Location = new System.Drawing.Point(663, 121);
+            this.TxtBoxUsedBrands.Location = new System.Drawing.Point(186, 121);
             this.TxtBoxUsedBrands.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxUsedBrands.Name = "TxtBoxUsedBrands";
-            this.TxtBoxUsedBrands.Size = new System.Drawing.Size(335, 33);
-            this.TxtBoxUsedBrands.TabIndex = 16;
+            this.TxtBoxUsedBrands.Size = new System.Drawing.Size(310, 33);
+            this.TxtBoxUsedBrands.TabIndex = 10;
             this.TxtBoxUsedBrands.TextChanged += new System.EventHandler(this.TxtBoxUsedBrands_TextChanged);
             // 
             // tableLayoutPanel11
@@ -716,24 +836,24 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Controls.Add(this.label28, 2, 1);
-            this.tableLayoutPanel11.Controls.Add(this.label29, 0, 2);
-            this.tableLayoutPanel11.Controls.Add(this.label30, 2, 2);
-            this.tableLayoutPanel11.Controls.Add(this.label31, 0, 3);
-            this.tableLayoutPanel11.Controls.Add(this.label32, 2, 3);
             this.tableLayoutPanel11.Controls.Add(this.label26, 0, 1);
             this.tableLayoutPanel11.Controls.Add(this.TxtBoxReligion, 1, 1);
-            this.tableLayoutPanel11.Controls.Add(this.TxtBoxCharacterTraits, 3, 1);
+            this.tableLayoutPanel11.Controls.Add(this.label28, 2, 1);
+            this.tableLayoutPanel11.Controls.Add(this.ComboBoxCharacterTraits, 3, 1);
+            this.tableLayoutPanel11.Controls.Add(this.label29, 0, 2);
             this.tableLayoutPanel11.Controls.Add(this.TxtBoxNormalCommunication, 1, 2);
+            this.tableLayoutPanel11.Controls.Add(this.label30, 2, 2);
             this.tableLayoutPanel11.Controls.Add(this.TxtBoxNormalPayment, 3, 2);
-            this.tableLayoutPanel11.Controls.Add(this.TxtBoxDeliveryTimeSensitivity, 1, 3);
-            this.tableLayoutPanel11.Controls.Add(this.TxtBoxNewProductRecommendReactionAcuity, 3, 3);
+            this.tableLayoutPanel11.Controls.Add(this.label31, 0, 3);
+            this.tableLayoutPanel11.Controls.Add(this.ComboBoxDeliveryTimeSensitivity, 1, 3);
+            this.tableLayoutPanel11.Controls.Add(this.label32, 2, 3);
+            this.tableLayoutPanel11.Controls.Add(this.ComboBoxNewProductRecommendReactionAcuity, 3, 3);
             this.tableLayoutPanel11.Controls.Add(this.label33, 0, 4);
-            this.tableLayoutPanel11.Controls.Add(this.label34, 2, 4);
             this.tableLayoutPanel11.Controls.Add(this.TxtBoxProductFactors, 1, 4);
+            this.tableLayoutPanel11.Controls.Add(this.label34, 2, 4);
             this.tableLayoutPanel11.Controls.Add(this.TxtBoxDecisionMaker, 3, 4);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(9, 824);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(9, 917);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 6;
@@ -744,67 +864,7 @@
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(1004, 220);
-            this.tableLayoutPanel11.TabIndex = 5;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label28.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label28.Location = new System.Drawing.Point(598, 25);
-            this.label28.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(109, 30);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "性格特征：";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label29.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label29.Location = new System.Drawing.Point(26, 75);
-            this.label29.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(169, 30);
-            this.label29.TabIndex = 2;
-            this.label29.Text = "常用的沟通方式：";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label30.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label30.Location = new System.Drawing.Point(538, 75);
-            this.label30.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(169, 30);
-            this.label30.TabIndex = 3;
-            this.label30.Text = "常用的支付方式：";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label31.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label31.Location = new System.Drawing.Point(46, 125);
-            this.label31.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(149, 30);
-            this.label31.TabIndex = 4;
-            this.label31.Text = "货期的敏感性：";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label32.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label32.Location = new System.Drawing.Point(518, 125);
-            this.label32.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(189, 30);
-            this.label32.TabIndex = 5;
-            this.label32.Text = "新产品反应敏锐度：";
+            this.tableLayoutPanel11.TabIndex = 9;
             // 
             // label26
             // 
@@ -815,7 +875,7 @@
             this.label26.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(69, 30);
-            this.label26.TabIndex = 0;
+            this.label26.TabIndex = 1;
             this.label26.Text = "宗教：";
             // 
             // TxtBoxReligion
@@ -826,19 +886,47 @@
             this.TxtBoxReligion.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxReligion.Name = "TxtBoxReligion";
             this.TxtBoxReligion.Size = new System.Drawing.Size(280, 33);
-            this.TxtBoxReligion.TabIndex = 6;
+            this.TxtBoxReligion.TabIndex = 2;
             this.TxtBoxReligion.TextChanged += new System.EventHandler(this.TxtBoxReligion_TextChanged);
             // 
-            // TxtBoxCharacterTraits
+            // label28
             // 
-            this.TxtBoxCharacterTraits.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxCharacterTraits.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxCharacterTraits.Location = new System.Drawing.Point(718, 21);
-            this.TxtBoxCharacterTraits.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxCharacterTraits.Name = "TxtBoxCharacterTraits";
-            this.TxtBoxCharacterTraits.Size = new System.Drawing.Size(280, 33);
-            this.TxtBoxCharacterTraits.TabIndex = 7;
-            this.TxtBoxCharacterTraits.TextChanged += new System.EventHandler(this.TxtBoxCharacterTraits_TextChanged);
+            this.label28.AutoSize = true;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label28.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label28.Location = new System.Drawing.Point(598, 25);
+            this.label28.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(109, 30);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "性格特征：";
+            // 
+            // ComboBoxCharacterTraits
+            // 
+            this.ComboBoxCharacterTraits.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxCharacterTraits.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxCharacterTraits.FormattingEnabled = true;
+            this.ComboBoxCharacterTraits.Items.AddRange(new object[] {
+            "开朗",
+            "寡语"});
+            this.ComboBoxCharacterTraits.Location = new System.Drawing.Point(718, 21);
+            this.ComboBoxCharacterTraits.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxCharacterTraits.Name = "ComboBoxCharacterTraits";
+            this.ComboBoxCharacterTraits.Size = new System.Drawing.Size(280, 30);
+            this.ComboBoxCharacterTraits.TabIndex = 4;
+            this.ComboBoxCharacterTraits.TextUpdate += new System.EventHandler(this.ComboBoxCharacterTraits_TextUpdate);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label29.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label29.Location = new System.Drawing.Point(26, 75);
+            this.label29.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(169, 30);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "常用的沟通方式：";
             // 
             // TxtBoxNormalCommunication
             // 
@@ -848,8 +936,20 @@
             this.TxtBoxNormalCommunication.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxNormalCommunication.Name = "TxtBoxNormalCommunication";
             this.TxtBoxNormalCommunication.Size = new System.Drawing.Size(280, 33);
-            this.TxtBoxNormalCommunication.TabIndex = 8;
+            this.TxtBoxNormalCommunication.TabIndex = 6;
             this.TxtBoxNormalCommunication.TextChanged += new System.EventHandler(this.TxtBoxNormalCommunication_TextChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label30.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label30.Location = new System.Drawing.Point(538, 75);
+            this.label30.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(169, 30);
+            this.label30.TabIndex = 7;
+            this.label30.Text = "常用的支付方式：";
             // 
             // TxtBoxNormalPayment
             // 
@@ -859,30 +959,64 @@
             this.TxtBoxNormalPayment.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxNormalPayment.Name = "TxtBoxNormalPayment";
             this.TxtBoxNormalPayment.Size = new System.Drawing.Size(280, 33);
-            this.TxtBoxNormalPayment.TabIndex = 9;
+            this.TxtBoxNormalPayment.TabIndex = 8;
             this.TxtBoxNormalPayment.TextChanged += new System.EventHandler(this.TxtBoxNormalPayment_TextChanged);
             // 
-            // TxtBoxDeliveryTimeSensitivity
+            // label31
             // 
-            this.TxtBoxDeliveryTimeSensitivity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxDeliveryTimeSensitivity.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxDeliveryTimeSensitivity.Location = new System.Drawing.Point(206, 121);
-            this.TxtBoxDeliveryTimeSensitivity.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxDeliveryTimeSensitivity.Name = "TxtBoxDeliveryTimeSensitivity";
-            this.TxtBoxDeliveryTimeSensitivity.Size = new System.Drawing.Size(280, 33);
-            this.TxtBoxDeliveryTimeSensitivity.TabIndex = 10;
-            this.TxtBoxDeliveryTimeSensitivity.TextChanged += new System.EventHandler(this.TxtBoxDeliveryTimeSensitivity_TextChanged);
+            this.label31.AutoSize = true;
+            this.label31.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label31.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label31.Location = new System.Drawing.Point(46, 125);
+            this.label31.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(149, 30);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "货期的敏感性：";
             // 
-            // TxtBoxNewProductRecommendReactionAcuity
+            // ComboBoxDeliveryTimeSensitivity
             // 
-            this.TxtBoxNewProductRecommendReactionAcuity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxNewProductRecommendReactionAcuity.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxNewProductRecommendReactionAcuity.Location = new System.Drawing.Point(718, 121);
-            this.TxtBoxNewProductRecommendReactionAcuity.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
-            this.TxtBoxNewProductRecommendReactionAcuity.Name = "TxtBoxNewProductRecommendReactionAcuity";
-            this.TxtBoxNewProductRecommendReactionAcuity.Size = new System.Drawing.Size(280, 33);
-            this.TxtBoxNewProductRecommendReactionAcuity.TabIndex = 11;
-            this.TxtBoxNewProductRecommendReactionAcuity.TextChanged += new System.EventHandler(this.TxtBoxNewProductRecommendReactionAcuity_TextChanged);
+            this.ComboBoxDeliveryTimeSensitivity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxDeliveryTimeSensitivity.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxDeliveryTimeSensitivity.FormattingEnabled = true;
+            this.ComboBoxDeliveryTimeSensitivity.Items.AddRange(new object[] {
+            "高",
+            "中",
+            "低"});
+            this.ComboBoxDeliveryTimeSensitivity.Location = new System.Drawing.Point(206, 121);
+            this.ComboBoxDeliveryTimeSensitivity.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxDeliveryTimeSensitivity.Name = "ComboBoxDeliveryTimeSensitivity";
+            this.ComboBoxDeliveryTimeSensitivity.Size = new System.Drawing.Size(280, 30);
+            this.ComboBoxDeliveryTimeSensitivity.TabIndex = 10;
+            this.ComboBoxDeliveryTimeSensitivity.TextUpdate += new System.EventHandler(this.ComboBoxDeliveryTimeSensitivity_TextUpdate);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label32.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label32.Location = new System.Drawing.Point(518, 125);
+            this.label32.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(189, 30);
+            this.label32.TabIndex = 11;
+            this.label32.Text = "新产品反应敏锐度：";
+            // 
+            // ComboBoxNewProductRecommendReactionAcuity
+            // 
+            this.ComboBoxNewProductRecommendReactionAcuity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxNewProductRecommendReactionAcuity.Font = new System.Drawing.Font("宋体", 11F);
+            this.ComboBoxNewProductRecommendReactionAcuity.FormattingEnabled = true;
+            this.ComboBoxNewProductRecommendReactionAcuity.Items.AddRange(new object[] {
+            "高",
+            "中",
+            "低"});
+            this.ComboBoxNewProductRecommendReactionAcuity.Location = new System.Drawing.Point(718, 121);
+            this.ComboBoxNewProductRecommendReactionAcuity.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
+            this.ComboBoxNewProductRecommendReactionAcuity.Name = "ComboBoxNewProductRecommendReactionAcuity";
+            this.ComboBoxNewProductRecommendReactionAcuity.Size = new System.Drawing.Size(280, 30);
+            this.ComboBoxNewProductRecommendReactionAcuity.TabIndex = 12;
+            this.ComboBoxNewProductRecommendReactionAcuity.TextUpdate += new System.EventHandler(this.ComboBoxNewProductRecommendReactionAcuity_TextUpdate);
             // 
             // label33
             // 
@@ -893,20 +1027,8 @@
             this.label33.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(169, 30);
-            this.label33.TabIndex = 12;
+            this.label33.TabIndex = 13;
             this.label33.Text = "注重的产品要素：";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label34.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label34.Location = new System.Drawing.Point(618, 175);
-            this.label34.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(89, 30);
-            this.label34.TabIndex = 13;
-            this.label34.Text = "决策者：";
             // 
             // TxtBoxProductFactors
             // 
@@ -919,6 +1041,18 @@
             this.TxtBoxProductFactors.TabIndex = 14;
             this.TxtBoxProductFactors.TextChanged += new System.EventHandler(this.TxtBoxProductFactors_TextChanged);
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label34.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label34.Location = new System.Drawing.Point(618, 175);
+            this.label34.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(89, 30);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "决策者：";
+            // 
             // TxtBoxDecisionMaker
             // 
             this.TxtBoxDecisionMaker.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -927,7 +1061,7 @@
             this.TxtBoxDecisionMaker.Margin = new System.Windows.Forms.Padding(6, 11, 6, 0);
             this.TxtBoxDecisionMaker.Name = "TxtBoxDecisionMaker";
             this.TxtBoxDecisionMaker.Size = new System.Drawing.Size(280, 33);
-            this.TxtBoxDecisionMaker.TabIndex = 15;
+            this.TxtBoxDecisionMaker.TabIndex = 16;
             this.TxtBoxDecisionMaker.TextChanged += new System.EventHandler(this.TxtBoxDecisionMaker_TextChanged);
             // 
             // tableLayoutPanel5
@@ -958,7 +1092,7 @@
             this.tableLayoutPanel5.Controls.Add(this.label18, 4, 3);
             this.tableLayoutPanel5.Controls.Add(this.TxtBoxFacebook, 5, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(9, 1047);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(9, 1140);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 5;
@@ -968,7 +1102,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1004, 170);
-            this.tableLayoutPanel5.TabIndex = 6;
+            this.tableLayoutPanel5.TabIndex = 10;
             // 
             // label10
             // 
@@ -1194,7 +1328,7 @@
             this.tableLayoutPanel14.Controls.Add(this.TxtBoxRemarks, 1, 1);
             this.tableLayoutPanel14.Controls.Add(this.label21, 0, 1);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(9, 1220);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(9, 1313);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 3;
@@ -1202,7 +1336,7 @@
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel14.Size = new System.Drawing.Size(1004, 310);
-            this.tableLayoutPanel14.TabIndex = 7;
+            this.tableLayoutPanel14.TabIndex = 11;
             // 
             // TxtBoxRemarks
             // 
@@ -1228,77 +1362,6 @@
             this.label21.Size = new System.Drawing.Size(69, 260);
             this.label21.TabIndex = 2;
             this.label21.Text = "备注：";
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Controls.Add(this.TxtBoxWebsite, 1, 2);
-            this.tableLayoutPanel9.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel9.Controls.Add(this.TxtBoxAddress, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.label5, 0, 1);
-            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(9, 325);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 4;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(1004, 200);
-            this.tableLayoutPanel9.TabIndex = 11;
-            // 
-            // TxtBoxWebsite
-            // 
-            this.TxtBoxWebsite.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxWebsite.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxWebsite.Location = new System.Drawing.Point(136, 106);
-            this.TxtBoxWebsite.Margin = new System.Windows.Forms.Padding(6);
-            this.TxtBoxWebsite.Multiline = true;
-            this.TxtBoxWebsite.Name = "TxtBoxWebsite";
-            this.TxtBoxWebsite.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtBoxWebsite.Size = new System.Drawing.Size(862, 78);
-            this.TxtBoxWebsite.TabIndex = 13;
-            this.TxtBoxWebsite.TextChanged += new System.EventHandler(this.TxtBoxWebsite_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(56, 115);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 70);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "网站：";
-            // 
-            // TxtBoxAddress
-            // 
-            this.TxtBoxAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtBoxAddress.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TxtBoxAddress.Location = new System.Drawing.Point(136, 16);
-            this.TxtBoxAddress.Margin = new System.Windows.Forms.Padding(6);
-            this.TxtBoxAddress.Multiline = true;
-            this.TxtBoxAddress.Name = "TxtBoxAddress";
-            this.TxtBoxAddress.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtBoxAddress.Size = new System.Drawing.Size(862, 78);
-            this.TxtBoxAddress.TabIndex = 5;
-            this.TxtBoxAddress.TextChanged += new System.EventHandler(this.TxtBoxAddress_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label5.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(56, 25);
-            this.label5.Margin = new System.Windows.Forms.Padding(0, 15, 5, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 70);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "地址：";
             // 
             // tableLayoutPanel18
             // 
@@ -1359,6 +1422,7 @@
             this.DataGridViewFollowUpLogs.RowTemplate.Height = 30;
             this.DataGridViewFollowUpLogs.Size = new System.Drawing.Size(1034, 659);
             this.DataGridViewFollowUpLogs.TabIndex = 0;
+            this.DataGridViewFollowUpLogs.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DataGridViewFollowUpLogs_CellMouseDoubleClick);
             this.DataGridViewFollowUpLogs.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.DataGridViewFollowUpLogs_RowStateChanged);
             this.DataGridViewFollowUpLogs.SelectionChanged += new System.EventHandler(this.DataGridViewFollowUpLogs_SelectionChanged);
             // 
@@ -1401,10 +1465,14 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            this.tableLayoutPanel20.ResumeLayout(false);
-            this.tableLayoutPanel20.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel20.ResumeLayout(false);
+            this.tableLayoutPanel20.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel11.ResumeLayout(false);
@@ -1413,8 +1481,6 @@
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel14.ResumeLayout(false);
             this.tableLayoutPanel14.PerformLayout();
-            this.tableLayoutPanel9.ResumeLayout(false);
-            this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewFollowUpLogs)).EndInit();
@@ -1430,11 +1496,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtBoxBusinessScope;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox TxtBoxType;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TxtBoxDemand;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox TxtBoxTelephone;
@@ -1482,22 +1544,15 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox TxtBoxReligion;
-        private System.Windows.Forms.TextBox TxtBoxCharacterTraits;
         private System.Windows.Forms.TextBox TxtBoxNormalCommunication;
         private System.Windows.Forms.TextBox TxtBoxNormalPayment;
-        private System.Windows.Forms.TextBox TxtBoxDeliveryTimeSensitivity;
-        private System.Windows.Forms.TextBox TxtBoxNewProductRecommendReactionAcuity;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox TxtBoxProductFactors;
         private System.Windows.Forms.TextBox TxtBoxDecisionMaker;
-        private System.Windows.Forms.TextBox TxtBoxComeFrom;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox TxtBoxLoyalty;
-        private System.Windows.Forms.TextBox TxtBoxAmountStratification;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox TxtBoxCustomerSize;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox TxtBoxCompanyName;
@@ -1515,5 +1570,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TxtBoxAddress;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TextBox TxtBoxDemand;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox ComboBoxComeFrom;
+        private System.Windows.Forms.ComboBox ComboBoxLoyalty;
+        private System.Windows.Forms.ComboBox ComboBoxCustomerSize;
+        private System.Windows.Forms.ComboBox ComboBoxAmountStratification;
+        private System.Windows.Forms.ComboBox ComboBoxType;
+        private System.Windows.Forms.ComboBox ComboBoxBusinessScope;
+        private System.Windows.Forms.ComboBox ComboBoxNewProductRecommendReactionAcuity;
+        private System.Windows.Forms.ComboBox ComboBoxDeliveryTimeSensitivity;
+        private System.Windows.Forms.ComboBox ComboBoxCharacterTraits;
     }
 }

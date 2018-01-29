@@ -56,8 +56,8 @@ namespace CFUSystem
                     TxtBoxWebsite.Text = this.Customer.Website;
                     TxtBoxCountry.Text = this.Customer.Country;
                     TxtBoxAddress.Text = this.Customer.Address;
-                    TxtBoxBusinessScope.Text = this.Customer.BusinessScope;
-                    TxtBoxType.Text = this.Customer.Type;
+                    ComboBoxBusinessScope.Text = this.Customer.BusinessScope;
+                    ComboBoxType.Text = this.Customer.Type;
                     TxtBoxDemand.Text = this.Customer.Demand;
                     TxtBoxTelephone.Text = this.Customer.Telephone;
                     TxtBoxFax.Text = this.Customer.FAX;
@@ -68,18 +68,18 @@ namespace CFUSystem
                     TxtBoxWhatsApp.Text = this.Customer.Whatsapp;
                     TxtBoxTwiter.Text = this.Customer.Twiter;
                     TxtBoxFacebook.Text = this.Customer.Facebook;
-                    TxtBoxComeFrom.Text = this.Customer.ComeFrom;
+                    ComboBoxComeFrom.Text = this.Customer.ComeFrom;
                     TxtBoxUsedBrands.Text = this.Customer.UsedBrands;
                     TxtBoxDecisionMaker.Text = this.Customer.DecisionMaker;
-                    TxtBoxNewProductRecommendReactionAcuity.Text = this.Customer.NewProductRecommendReactionAcuity;
+                    ComboBoxNewProductRecommendReactionAcuity.Text = this.Customer.NewProductRecommendReactionAcuity;
                     TxtBoxReligion.Text = this.Customer.Religion;
-                    TxtBoxCharacterTraits.Text = this.Customer.CharacterTraits;
-                    TxtBoxAmountStratification.Text = this.Customer.AmountStratification;
+                    ComboBoxCharacterTraits.Text = this.Customer.CharacterTraits;
+                    ComboBoxAmountStratification.Text = this.Customer.AmountStratification;
                     TxtBoxNormalCommunication.Text = this.Customer.NormalCommunication;
                     TxtBoxNormalPayment.Text = this.Customer.NormalPayment;
-                    TxtBoxCustomerSize.Text = this.Customer.CustomerSize;
-                    TxtBoxDeliveryTimeSensitivity.Text = this.Customer.DeliveryTimeSensitivity;
-                    TxtBoxLoyalty.Text = this.Customer.Loyalty;
+                    ComboBoxCustomerSize.Text = this.Customer.CustomerSize;
+                    ComboBoxDeliveryTimeSensitivity.Text = this.Customer.DeliveryTimeSensitivity;
+                    ComboBoxLoyalty.Text = this.Customer.Loyalty;
                     TxtBoxProductFactors.Text = this.Customer.ProductFactors;
                     TxtBoxRemarks.Text = this.Customer.Remarks;
 
@@ -384,15 +384,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxBusinessScope_TextChanged(object sender, EventArgs e)
+        private void ComboBoxBusinessScope_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxBusinessScope.Text;
+                string cur = ComboBoxBusinessScope.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxBusinessScope.Focus();
+                    ComboBoxBusinessScope.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -412,15 +412,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxType_TextChanged(object sender, EventArgs e)
+        private void ComboBoxType_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxType.Text;
+                string cur = ComboBoxType.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxType.Focus();
+                    ComboBoxType.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -720,15 +720,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxComeFrom_TextChanged(object sender, EventArgs e)
+        private void ComboBoxComeFrom_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxComeFrom.Text;
+                string cur = ComboBoxComeFrom.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxComeFrom.Focus();
+                    ComboBoxComeFrom.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -776,15 +776,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxCustomerSize_TextChanged(object sender, EventArgs e)
+        private void ComboBoxCustomerSize_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxCustomerSize.Text;
+                string cur = ComboBoxCustomerSize.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxCustomerSize.Focus();
+                    ComboBoxCustomerSize.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -804,15 +804,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxAmountStratification_TextChanged(object sender, EventArgs e)
+        private void ComboBoxAmountStratification_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxAmountStratification.Text;
+                string cur = ComboBoxAmountStratification.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxAmountStratification.Focus();
+                    ComboBoxAmountStratification.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -888,15 +888,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxCharacterTraits_TextChanged(object sender, EventArgs e)
+        private void ComboBoxCharacterTraits_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxCharacterTraits.Text;
+                string cur = ComboBoxCharacterTraits.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxCharacterTraits.Focus();
+                    ComboBoxCharacterTraits.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -972,15 +972,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxDeliveryTimeSensitivity_TextChanged(object sender, EventArgs e)
+        private void ComboBoxDeliveryTimeSensitivity_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxDeliveryTimeSensitivity.Text;
+                string cur = ComboBoxDeliveryTimeSensitivity.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxDeliveryTimeSensitivity.Focus();
+                    ComboBoxDeliveryTimeSensitivity.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -1000,15 +1000,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxNewProductRecommendReactionAcuity_TextChanged(object sender, EventArgs e)
+        private void ComboBoxNewProductRecommendReactionAcuity_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxNewProductRecommendReactionAcuity.Text;
+                string cur = ComboBoxNewProductRecommendReactionAcuity.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxNewProductRecommendReactionAcuity.Focus();
+                    ComboBoxNewProductRecommendReactionAcuity.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -1084,15 +1084,15 @@ namespace CFUSystem
             }
         }
 
-        private void TxtBoxLoyalty_TextChanged(object sender, EventArgs e)
+        private void ComboBoxLoyalty_TextUpdate(object sender, EventArgs e)
         {
             try
             {
-                string cur = TxtBoxLoyalty.Text;
+                string cur = ComboBoxLoyalty.Text;
                 if (cur.Contains("'"))
                 {
                     MessageBox.Show(this, "含有非法字符 \"'\" !", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    TxtBoxLoyalty.Focus();
+                    ComboBoxLoyalty.Focus();
                 }
                 //else if (WorkingState.Modify == this.WorkingState)
                 //{
@@ -1126,8 +1126,8 @@ namespace CFUSystem
                 string website = this.Customer.Website = TxtBoxWebsite.Text.Trim();
                 string country = this.Customer.Country = TxtBoxCountry.Text.Trim();
                 string address = this.Customer.Address = TxtBoxAddress.Text.Trim();
-                string scope = this.Customer.BusinessScope = TxtBoxBusinessScope.Text.Trim();
-                string type = this.Customer.Type = TxtBoxType.Text.Trim();
+                string scope = this.Customer.BusinessScope = ComboBoxBusinessScope.Text.Trim();
+                string type = this.Customer.Type = ComboBoxType.Text.Trim();
                 string demand = this.Customer.Demand = TxtBoxDemand.Text.Trim();
                 string telephone = this.Customer.Telephone = TxtBoxTelephone.Text.Trim();
                 string fax = this.Customer.FAX = TxtBoxFax.Text.Trim();
@@ -1138,20 +1138,20 @@ namespace CFUSystem
                 string whatsapp = this.Customer.Whatsapp = TxtBoxWhatsApp.Text.Trim();
                 string twiter = this.Customer.Twiter = TxtBoxTwiter.Text.Trim();
                 string facebook = this.Customer.Facebook = TxtBoxFacebook.Text.Trim();
-                string comefrom = this.Customer.ComeFrom = TxtBoxComeFrom.Text.Trim();
+                string comefrom = this.Customer.ComeFrom = ComboBoxComeFrom.Text.Trim();
                 string usedBrands = this.Customer.UsedBrands = TxtBoxUsedBrands.Text.Trim();
                 string decisionMaker = this.Customer.DecisionMaker = TxtBoxDecisionMaker.Text.Trim();
-                string reactionAcuity = this.Customer.NewProductRecommendReactionAcuity = TxtBoxNewProductRecommendReactionAcuity.Text.Trim();
+                string reactionAcuity = this.Customer.NewProductRecommendReactionAcuity = ComboBoxNewProductRecommendReactionAcuity.Text.Trim();
                 string religion = this.Customer.Religion = TxtBoxReligion.Text.Trim();
-                string charaterTraits = this.Customer.CharacterTraits = TxtBoxCharacterTraits.Text.Trim();
-                string amountStratification = this.Customer.AmountStratification = TxtBoxAmountStratification.Text.Trim();
+                string charaterTraits = this.Customer.CharacterTraits = ComboBoxCharacterTraits.Text.Trim();
+                string amountStratification = this.Customer.AmountStratification = ComboBoxAmountStratification.Text.Trim();
                 string normalCommunication = this.Customer.NormalCommunication = TxtBoxNormalCommunication.Text.Trim();
                 string normalPayment = this.Customer.NormalPayment = TxtBoxNormalPayment.Text.Trim();
-                string customerSize = this.Customer.CustomerSize = TxtBoxCustomerSize.Text.Trim();
-                string deliveryTimeSensitivity = this.Customer.DeliveryTimeSensitivity = TxtBoxDeliveryTimeSensitivity.Text.Trim();
-                string loyalty = this.Customer.Loyalty = TxtBoxLoyalty.Text.Trim();
+                string customerSize = this.Customer.CustomerSize = ComboBoxCustomerSize.Text.Trim();
+                string deliveryTimeSensitivity = this.Customer.DeliveryTimeSensitivity = ComboBoxDeliveryTimeSensitivity.Text.Trim();
+                string loyalty = this.Customer.Loyalty = ComboBoxLoyalty.Text.Trim();
                 string productFactors = this.Customer.ProductFactors = TxtBoxProductFactors.Text.Trim();
-                string belongsto = this.Customer.BelongsTo = TxtBoxLoyalty.Text.Trim();
+                //string belongsto = this.Customer.BelongsTo = TxtBoxLoyalty.Text.Trim();
                 string remarks = this.Customer.Remarks = TxtBoxRemarks.Text.Trim();
                 string modify = this.Customer.Modify = DateTime.Now.ToLocalTime().ToString();
                 string futime = this.Customer.LastFollowUpTime = "";
@@ -1224,7 +1224,7 @@ namespace CFUSystem
                         remarks, modify);
                     if (num > 0)
                     {
-                        this.DialogResult = DialogResult.OK;
+                        //this.DialogResult = DialogResult.OK;
                         DialogResult result = MessageBox.Show(this, "更新客户信息成功！您想要 【是】 继续添加客户跟进日志，【否】 关闭客户信息界面，【取消】 什么也不做", this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
                         if (DialogResult.OK == result)
                         {
@@ -1327,6 +1327,19 @@ namespace CFUSystem
             }
         }
 
+        private void DataGridViewFollowUpLogs_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dataGridViewRow = DataGridViewFollowUpLogs.Rows[e.RowIndex];
+                EditDataGridViewRow(dataGridViewRow);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private ToolStripMenuItem CreateAddFollowUpLogMenuItem()
         {
             ToolStripMenuItem tsmiAdd = new ToolStripMenuItem();
@@ -1389,27 +1402,8 @@ namespace CFUSystem
         {
             try
             {
-                DataRow dataRow = (DataGridViewFollowUpLogs.SelectedRows[0].DataBoundItem as DataRowView).Row;
-                var item = dataRow.ToExpression<CustomerFollowUpLog>();
-                if (null != item)
-                {
-                    var log = item(dataRow);
-                    if (null != log)
-                    {
-                        FrmFollowUpLog frmFollowUpLog = new FrmFollowUpLog()
-                        {
-                            FollowUpWorkingState = WorkingState.Modify,
-                            Customer = this.Customer,
-                            FollowUpLog = log,
-                        };
-                        DialogResult result = frmFollowUpLog.ShowDialog(this);
-                        if (DialogResult.OK == result)
-                        {
-                            LoadAllLogs(this.Customer.Id);
-                            //this.DialogResult = DialogResult.OK;
-                        }
-                    }
-                }
+                DataGridViewRow row = DataGridViewFollowUpLogs.SelectedRows[0];
+                EditDataGridViewRow(row);
             }
             catch (Exception ex)
             {
@@ -1538,6 +1532,30 @@ namespace CFUSystem
             }
 
             return isExist;
+        }
+
+        private void EditDataGridViewRow(DataGridViewRow row)
+        {
+            DataRow dataRow = (row.DataBoundItem as DataRowView).Row;
+            var item = dataRow.ToExpression<CustomerFollowUpLog>();
+            if (null != item)
+            {
+                var log = item(dataRow);
+                if (null != log)
+                {
+                    FrmFollowUpLog frmFollowUpLog = new FrmFollowUpLog()
+                    {
+                        FollowUpWorkingState = WorkingState.Modify,
+                        Customer = this.Customer,
+                        FollowUpLog = log,
+                    };
+                    DialogResult result = frmFollowUpLog.ShowDialog(this);
+                    if (DialogResult.OK == result)
+                    {
+                        LoadAllLogs(this.Customer.Id);
+                    }
+                }
+            }
         }
 
         private void LblCompanyVerify_Click(object sender, EventArgs e)

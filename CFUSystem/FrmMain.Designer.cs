@@ -76,7 +76,7 @@ namespace CFUSystem
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 9;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
@@ -104,10 +104,10 @@ namespace CFUSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label1.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F);
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(26, 16);
+            this.label1.Location = new System.Drawing.Point(5, 16);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 11, 5, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 24);
@@ -121,12 +121,12 @@ namespace CFUSystem
             this.LblUserName.Dock = System.Windows.Forms.DockStyle.Left;
             this.LblUserName.Font = new System.Drawing.Font("宋体", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LblUserName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.LblUserName.Location = new System.Drawing.Point(105, 16);
+            this.LblUserName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LblUserName.Location = new System.Drawing.Point(85, 16);
             this.LblUserName.Margin = new System.Windows.Forms.Padding(5, 11, 5, 5);
             this.LblUserName.Name = "LblUserName";
-            this.LblUserName.Size = new System.Drawing.Size(75, 24);
+            this.LblUserName.Size = new System.Drawing.Size(0, 24);
             this.LblUserName.TabIndex = 1;
-            this.LblUserName.Text = "label2";
             this.LblUserName.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // BtnAccountManage

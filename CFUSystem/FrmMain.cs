@@ -38,10 +38,12 @@ namespace CFUSystem
         {
             try
             {
-                LoadAllUsers();
+                //LoadAllUsers();
 
                 if(Login())
                 {
+                    //LoadAllUsers();
+
                     LoadCustomerInPage(1);
 
                     ToolStripMenuItem tsmiAdd = CreateAddCustomerInfoMenuItem();
@@ -361,7 +363,8 @@ namespace CFUSystem
         {
             try
             {
-
+                DataGridViewRow dataGridViewRow = DataGridViewCustomerInfo.Rows[e.RowIndex];
+                EditDataGridViewRow(dataGridViewRow);
             }
             catch (Exception ex)
             {
@@ -680,6 +683,8 @@ namespace CFUSystem
                 this.Close();
                 return false;
             }
+
+            LoadAllUsers();
 
             this.User = frmLogin.User;
             this.UserName = frmLogin.UserName;
